@@ -1,0 +1,54 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --color-charcoal: #1a1a1a;
+  --color-charcoal-light: #2d2d2d;
+  --color-coral: #e8634a;
+  --color-coral-dark: #d14f36;
+  --color-teal: #2a9d8f;
+  --color-teal-dark: #238b7f;
+  --color-cream: #faf8f5;
+  --color-cream-dark: #f0ebe3;
+  --color-muted: #6b6b6b;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream font-sans text-charcoal antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* react-day-picker overrides */
+.rdp-root {
+  --rdp-accent-color: var(--color-teal);
+  --rdp-accent-background-color: color-mix(in srgb, var(--color-teal) 15%, transparent);
+  --rdp-day-height: 2.5rem;
+  --rdp-day-width: 2.5rem;
+}
+
+.rdp-day_button:hover:not([disabled]) {
+  background-color: color-mix(in srgb, var(--color-teal) 20%, transparent);
+}
+
+.rdp-selected .rdp-day_button {
+  background-color: var(--color-teal) !important;
+  color: white !important;
+}
