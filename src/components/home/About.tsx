@@ -4,37 +4,47 @@ import { SectionHeading } from '../ui/SectionHeading'
 
 export function About() {
   return (
-    <section className="py-16 lg:py-24" id="about">
+    <section className="py-24 lg:py-32" id="about">
       <div className="container-page">
-        <div className="grid items-center gap-10 lg:grid-cols-2">
-          <div className="aspect-[4/3] overflow-hidden rounded-2xl bg-gradient-to-br from-cream-dark to-teal/20">
-            <div className="flex h-full items-center justify-center p-8 text-center text-muted">
-              <p className="text-sm">Add Sandra&apos;s photo to /public/about.jpg</p>
+        <div className="grid items-center gap-16 lg:grid-cols-2">
+          {/* Portrait of Sandra (public/SJF_Hero.jpg) */}
+          <div
+            className="relative aspect-[4/5] border border-white/10 bg-graphite bg-cover bg-center"
+            style={{ backgroundImage: 'url(/SJF_Hero.jpg)' }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-t from-obsidian/85 via-obsidian/20 to-transparent" />
+            <span className="pointer-events-none absolute inset-4 border border-gold/25" />
+            <div className="absolute inset-x-0 bottom-0 p-8">
+              <p className="font-display text-3xl text-ivory">{siteConfig.owner}</p>
+              <p className="eyebrow mt-3">Founder · Personal Coach</p>
             </div>
           </div>
 
           <div>
             <SectionHeading
-              eyebrow="About"
-              title={`Welcome to ${siteConfig.name.split(' ')[0]} ${siteConfig.name.split(' ')[1]}`}
-              subtitle="Your personal path to a healthier, stronger you."
+              eyebrow="The Founder"
+              title="Meet Sandra Furney"
+              subtitle="Certified personal trainer, nutrition expert and qualified chef."
             />
-            <div className="space-y-4 text-muted leading-relaxed">
+            <div className="space-y-5 leading-relaxed text-ash">
               <p>
-                Welcome to SJF Fitness. {siteConfig.owner} is a female personal trainer based in a
-                private training studio on Portlaoise Main Street.
+                SJF Fitness is a private studio built around one belief: real results come from
+                real attention. Every session is led personally by Sandra — never handed off to a
+                rotating floor of instructors.
               </p>
               <p>
-                Do you want to lose weight, get fitter, stronger and healthier? You have come to the
-                right place.
+                Whether your goal is to lose weight, build strength, or simply feel at home in your
+                body again, she designs a plan around your life and coaches you through every rep
+                and every meal.
               </p>
               <p>
-                Sandra is a certified Personal Trainer, Nutrition Expert and Qualified Chef. Contact
-                her now to book an appointment.
+                As a trainer, nutrition expert and qualified chef, Sandra brings the whole picture
+                together — how you train, how you eat, how you cook — in one discreet, welcoming
+                space.
               </p>
             </div>
-            <Button to="/contact" variant="secondary" className="mt-8">
-              Contact Now
+            <Button to="/contact" variant="outline" className="mt-10">
+              Start a Conversation
             </Button>
           </div>
         </div>

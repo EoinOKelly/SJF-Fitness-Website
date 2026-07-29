@@ -19,7 +19,7 @@ export function DateSelect({ selected, onSelect }: DateSelectProps) {
         onSelect={onSelect}
         disabled={{ before: today }}
         showOutsideDays
-        className="rounded-2xl border border-cream-dark bg-white p-4 shadow-sm"
+        className="border border-white/10 bg-obsidian p-4"
       />
     </div>
   )

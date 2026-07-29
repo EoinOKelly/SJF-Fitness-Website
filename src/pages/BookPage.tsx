@@ -8,12 +8,12 @@ export function BookPage() {
       title="Book Now"
       description="Book a personal training session with Sandra Furney at SJF Fitness Portlaoise."
     >
-      <section className="py-12 lg:py-16">
+      <section className="py-20 lg:py-28">
         <div className="container-page">
           <SectionHeading
-            eyebrow="Book Now"
+            eyebrow="Reserve"
             title="Schedule your session"
-            subtitle="Choose your service, pick a date and time, and Sandra will confirm your appointment."
+            subtitle="Choose your service, pick a date and time, and Sandra will personally confirm your appointment."
             align="center"
           />
           <BookingWizard />

@@ -1,5 +1,4 @@
 import { services } from '../../data/services'
-import { Card } from '../ui/Card'
 
 interface ServiceSelectProps {
   selectedId: string
@@ -8,7 +7,7 @@ interface ServiceSelectProps {
 
 export function ServiceSelect({ selectedId, onSelect }: ServiceSelectProps) {
   return (
-    <div className="grid gap-4 sm:grid-cols-2">
+    <div className="grid gap-3 sm:grid-cols-2">
       {services.map((service) => {
         const Icon = service.icon
         const isSelected = selectedId === service.id
@@ -18,31 +17,31 @@ export function ServiceSelect({ selectedId, onSelect }: ServiceSelectProps) {
             key={service.id}
             type="button"
             onClick={() => onSelect(service.id)}
-            className="text-left"
+            className={`border p-5 text-left transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-graphite ${
+              isSelected
+                ? 'border-gold bg-gold/5'
+                : 'border-white/10 hover:border-gold/40'
+            }`}
             aria-pressed={isSelected}
           >
-            <Card
-              className={`cursor-pointer transition-all ${
-                isSelected
-                  ? 'border-teal ring-2 ring-teal ring-offset-2'
-                  : 'hover:border-teal/50'
-              }`}
-            >
-              <div className="flex items-start gap-3">
-                <div className={`rounded-lg p-2 ${isSelected ? 'bg-teal text-white' : 'bg-teal/10 text-teal'}`}>
-                  <Icon className="h-5 w-5" />
+            <div className="flex items-start gap-3">
+              <span
+                className={`flex h-9 w-9 shrink-0 items-center justify-center border ${
+                  isSelected ? 'border-gold text-gold' : 'border-white/15 text-ash'
+                }`}
+              >
+                <Icon className="h-4 w-4" />
+              </span>
+              <div className="flex-1">
+                <div className="flex items-start justify-between gap-2">
+                  <h3 className="text-sm font-medium text-ivory">{service.title}</h3>
+                  <span className="shrink-0 font-display text-lg text-gold">{service.price}</span>
                 </div>
-                <div className="flex-1">
-                  <div className="flex items-start justify-between gap-2">
-                    <h3 className="font-semibold text-charcoal">{service.title}</h3>
-                    <span className="shrink-0 font-display text-lg font-bold text-coral">
-                      {service.price}
-                    </span>
-                  </div>
-                  <p className="mt-1 text-xs text-muted">{service.priceNote}</p>
-                </div>
+                <p className="mt-1 text-[0.66rem] uppercase tracking-[0.16em] text-ash-dim">
+                  {service.priceNote}
+                </p>
               </div>
-            </Card>
+            </div>
           </button>
         )
       })}

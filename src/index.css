@@ -1,17 +1,18 @@
 @import 'tailwindcss';
 
 @theme {
-  --font-sans: 'DM Sans', system-ui, sans-serif;
-  --font-display: 'Playfair Display', Georgia, serif;
-  --color-charcoal: #1a1a1a;
-  --color-charcoal-light: #2d2d2d;
-  --color-coral: #e8634a;
-  --color-coral-dark: #d14f36;
-  --color-teal: #2a9d8f;
-  --color-teal-dark: #238b7f;
-  --color-cream: #faf8f5;
-  --color-cream-dark: #f0ebe3;
-  --color-muted: #6b6b6b;
+  --font-sans: 'Jost', system-ui, sans-serif;
+  --font-display: 'Bodoni Moda', Georgia, serif;
+
+  --color-obsidian: #0a0a0b;
+  --color-onyx: #111114;
+  --color-graphite: #17171b;
+  --color-gold: #c9a35c;
+  --color-gold-light: #e7d3a1;
+  --color-gold-dark: #9a7838;
+  --color-ivory: #f4f1ea;
+  --color-ash: #a7a199;
+  --color-ash-dim: #8b857b;
 }
 
 @layer base {
@@ -20,7 +21,7 @@
   }
 
   body {
-    @apply bg-cream font-sans text-charcoal antialiased;
+    @apply bg-obsidian font-sans text-ivory antialiased;
   }
 
   h1,
@@ -28,27 +29,65 @@
   h3 {
     @apply font-display;
   }
+
+  ::selection {
+    background-color: var(--color-gold);
+    color: var(--color-obsidian);
+  }
 }
 
 @layer components {
   .container-page {
-    @apply mx-auto max-w-6xl px-4 sm:px-6 lg:px-8;
+    @apply mx-auto max-w-6xl px-5 sm:px-8 lg:px-10;
+  }
+
+  /* Small wide-tracked label used sparingly as a system kicker */
+  .eyebrow {
+    @apply text-[0.7rem] font-medium uppercase tracking-[0.28em] text-gold;
   }
 }
 
-/* react-day-picker overrides */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* react-day-picker — dark obsidian + gold */
 .rdp-root {
-  --rdp-accent-color: var(--color-teal);
-  --rdp-accent-background-color: color-mix(in srgb, var(--color-teal) 15%, transparent);
-  --rdp-day-height: 2.5rem;
-  --rdp-day-width: 2.5rem;
+  --rdp-accent-color: var(--color-gold);
+  --rdp-accent-background-color: color-mix(in srgb, var(--color-gold) 18%, transparent);
+  --rdp-background-color: transparent;
+  --rdp-day-height: 2.6rem;
+  --rdp-day-width: 2.6rem;
+  --rdp-outside-opacity: 0.35;
+  color: var(--color-ivory);
+}
+
+.rdp-caption_label,
+.rdp-weekday {
+  color: var(--color-ash);
 }
 
 .rdp-day_button:hover:not([disabled]) {
-  background-color: color-mix(in srgb, var(--color-teal) 20%, transparent);
+  background-color: color-mix(in srgb, var(--color-gold) 22%, transparent);
 }
 
 .rdp-selected .rdp-day_button {
-  background-color: var(--color-teal) !important;
-  color: white !important;
+  background-color: var(--color-gold) !important;
+  color: var(--color-obsidian) !important;
+  font-weight: 600;
+}
+
+.rdp-day_button:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
 }

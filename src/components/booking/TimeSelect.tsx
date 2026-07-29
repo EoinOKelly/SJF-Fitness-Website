@@ -10,7 +10,7 @@ const timeSlots = generateTimeSlots()
 export function TimeSelect({ selected, onSelect }: TimeSelectProps) {
   return (
     <div>
-      <p className="mb-4 text-sm text-muted">
+      <p className="mb-5 text-sm text-ash">
         Select a preferred time. Sandra will confirm availability after you submit.
       </p>
       <div className="grid grid-cols-3 gap-2 sm:grid-cols-4 md:grid-cols-5">
@@ -21,10 +21,10 @@ export function TimeSelect({ selected, onSelect }: TimeSelectProps) {
               key={slot}
               type="button"
               onClick={() => onSelect(slot)}
-              className={`rounded-lg border px-3 py-2.5 text-sm font-medium transition-colors ${
+              className={`border px-3 py-2.5 text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-graphite ${
                 isSelected
-                  ? 'border-teal bg-teal text-white'
-                  : 'border-cream-dark bg-white text-charcoal hover:border-teal hover:text-teal'
+                  ? 'border-gold bg-gold text-obsidian'
+                  : 'border-white/10 text-ash hover:border-gold/50 hover:text-ivory'
               }`}
               aria-pressed={isSelected}
             >

@@ -6,22 +6,22 @@ type Size = 'sm' | 'md' | 'lg'
 
 const variantClasses: Record<Variant, string> = {
   primary:
-    'bg-coral text-white hover:bg-coral-dark focus-visible:ring-coral shadow-sm',
+    'bg-gold text-obsidian hover:bg-gold-light',
   secondary:
-    'bg-teal text-white hover:bg-teal-dark focus-visible:ring-teal shadow-sm',
+    'border border-white/15 bg-transparent text-ivory hover:border-gold hover:text-gold',
   outline:
-    'border-2 border-charcoal text-charcoal hover:bg-charcoal hover:text-white focus-visible:ring-charcoal',
-  ghost: 'text-charcoal hover:bg-cream-dark focus-visible:ring-charcoal',
+    'border border-gold/50 text-ivory hover:bg-gold hover:text-obsidian',
+  ghost: 'text-ash hover:text-gold',
 }
 
 const sizeClasses: Record<Size, string> = {
-  sm: 'px-4 py-2 text-sm',
-  md: 'px-6 py-2.5 text-base',
-  lg: 'px-8 py-3 text-base',
+  sm: 'px-5 py-2.5 text-[0.68rem]',
+  md: 'px-7 py-3 text-[0.72rem]',
+  lg: 'px-9 py-4 text-[0.72rem]',
 }
 
 const baseClasses =
-  'inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50'
+  'inline-flex items-center justify-center gap-2.5 font-medium uppercase tracking-[0.2em] transition-all duration-300 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-obsidian disabled:pointer-events-none disabled:opacity-40'
 
 interface ButtonBaseProps {
   variant?: Variant

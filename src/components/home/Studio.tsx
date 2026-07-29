@@ -4,57 +4,51 @@ import { SectionHeading } from '../ui/SectionHeading'
 
 export function Studio() {
   return (
-    <section className="bg-cream-dark py-16 lg:py-24" id="studio">
+    <section className="bg-onyx py-24 lg:py-32" id="studio">
       <div className="container-page">
         <SectionHeading
           eyebrow="The Studio"
-          title="A comfortable space for one-on-one training"
-          subtitle="We have a brand new premises at The Office Box in Kealew Business Park, Portlaoise. The new studio is a comfortable space where you will get the one on one attention you deserve."
+          title="A space that is yours alone"
+          subtitle="Our studio at The Office Box, Kealew Business Park is a calm, private setting — no crowds, no waiting, no audience. Just you and the work."
           align="center"
         />
 
-        <div className="grid gap-8 lg:grid-cols-2">
-          <div className="overflow-hidden rounded-2xl border border-cream-dark bg-white shadow-sm">
+        <div className="grid gap-8 lg:grid-cols-5">
+          <div className="overflow-hidden border border-white/10 lg:col-span-3">
             <iframe
               title="SJF Fitness studio location map"
               src={siteConfig.mapEmbedUrl}
-              className="h-72 w-full border-0 sm:h-96"
+              className="h-80 w-full border-0 grayscale sm:h-96 lg:h-full"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               allowFullScreen
             />
           </div>
 
-          <div className="flex flex-col justify-center">
-            <div className="rounded-2xl border border-cream-dark bg-white p-8 shadow-sm">
-              <div className="flex items-start gap-4">
-                <div className="rounded-full bg-teal/10 p-3">
-                  <MapPin className="h-6 w-6 text-teal" />
-                </div>
-                <div>
-                  <h3 className="font-display text-xl font-bold text-charcoal">Find Us</h3>
-                  <address className="mt-3 not-italic leading-relaxed text-muted">
-                    {siteConfig.address.line1}
-                    <br />
-                    {siteConfig.address.line2}
-                    <br />
-                    {siteConfig.address.city}
-                    <br />
-                    <span className="font-semibold text-charcoal">
-                      Eircode: {siteConfig.address.eircode}
-                    </span>
-                  </address>
-                  <a
-                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(siteConfig.address.full)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 inline-block text-sm font-semibold text-teal hover:text-teal-dark"
-                  >
-                    Open in Google Maps →
-                  </a>
-                </div>
-              </div>
+          <div className="flex flex-col justify-center border border-white/10 bg-graphite p-10 lg:col-span-2">
+            <div className="flex items-center gap-4">
+              <span className="flex h-12 w-12 items-center justify-center border border-gold/40 text-gold">
+                <MapPin className="h-5 w-5" />
+              </span>
+              <h3 className="font-display text-2xl text-ivory">Find the Studio</h3>
             </div>
+            <address className="mt-8 not-italic leading-loose text-ash">
+              {siteConfig.address.line1}
+              <br />
+              {siteConfig.address.line2}
+              <br />
+              {siteConfig.address.city}
+              <br />
+              <span className="text-ivory">Eircode: {siteConfig.address.eircode}</span>
+            </address>
+            <a
+              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(siteConfig.address.full)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-flex items-center gap-2 text-[0.72rem] font-medium uppercase tracking-[0.2em] text-gold transition-colors hover:text-gold-light"
+            >
+              Open in Google Maps →
+            </a>
           </div>
         </div>
       </div>

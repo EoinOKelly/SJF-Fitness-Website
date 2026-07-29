@@ -8,21 +8,32 @@ export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
 
   const navLinkClass = ({ isActive }: { isActive: boolean }) =>
-    `rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
-      isActive ? 'text-teal' : 'text-charcoal hover:text-teal'
+    `text-[0.72rem] font-medium uppercase tracking-[0.2em] transition-colors ${
+      isActive ? 'text-gold' : 'text-ash hover:text-ivory'
     }`
 
   return (
-    <header className="sticky top-0 z-50 border-b border-cream-dark bg-cream/95 backdrop-blur-sm">
-      <div className="container-page flex h-16 items-center justify-between gap-4">
-        <Link to="/" className="group flex flex-col leading-tight" onClick={() => setMobileOpen(false)}>
-          <span className="font-display text-lg font-bold text-charcoal group-hover:text-teal">
-            SJF Fitness
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-obsidian/80 backdrop-blur-md">
+      <div className="container-page flex h-20 items-center justify-between gap-4">
+        <Link
+          to="/"
+          className="group flex items-center gap-3"
+          onClick={() => setMobileOpen(false)}
+        >
+          <span className="flex h-10 w-10 items-center justify-center border border-gold/50 font-display text-lg font-semibold text-gold transition-colors group-hover:bg-gold group-hover:text-obsidian">
+            S
           </span>
-          <span className="text-xs text-muted">Portlaoise</span>
+          <span className="flex flex-col leading-none">
+            <span className="font-display text-lg tracking-wide text-ivory transition-colors group-hover:text-gold">
+              SJF Fitness
+            </span>
+            <span className="mt-1 text-[0.6rem] uppercase tracking-[0.32em] text-ash-dim">
+              Portlaoise
+            </span>
+          </span>
         </Link>
 
-        <nav className="hidden items-center gap-1 md:flex" aria-label="Main navigation">
+        <nav className="hidden items-center gap-9 md:flex" aria-label="Main navigation">
           {siteConfig.navLinks.map((link) => (
             <NavLink key={link.href} to={link.href} className={navLinkClass} end={link.href === '/'}>
               {link.label}
@@ -30,12 +41,12 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-6 md:flex">
           <a
             href={siteConfig.phoneHref}
-            className="flex items-center gap-1.5 text-sm font-medium text-muted hover:text-teal"
+            className="flex items-center gap-2 text-[0.72rem] font-medium tracking-wide text-ash transition-colors hover:text-gold"
           >
-            <Phone className="h-4 w-4" />
+            <Phone className="h-3.5 w-3.5" />
             {siteConfig.phone}
           </a>
           <Button to="/book" size="sm">
@@ -45,7 +56,7 @@ export function Header() {
 
         <button
           type="button"
-          className="rounded-lg p-2 text-charcoal hover:bg-cream-dark md:hidden"
+          className="p-2 text-ivory transition-colors hover:text-gold md:hidden"
           onClick={() => setMobileOpen((open) => !open)}
           aria-expanded={mobileOpen}
           aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
@@ -56,10 +67,10 @@ export function Header() {
 
       {mobileOpen && (
         <nav
-          className="border-t border-cream-dark bg-cream px-4 py-4 md:hidden"
+          className="border-t border-white/10 bg-obsidian px-5 py-6 md:hidden"
           aria-label="Mobile navigation"
         >
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-5">
             {siteConfig.navLinks.map((link) => (
               <NavLink
                 key={link.href}
@@ -73,12 +84,12 @@ export function Header() {
             ))}
             <a
               href={siteConfig.phoneHref}
-              className="mt-2 flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-teal"
+              className="mt-1 flex items-center gap-2 text-[0.72rem] font-medium uppercase tracking-[0.2em] text-gold"
             >
               <Phone className="h-4 w-4" />
               {siteConfig.phone}
             </a>
-            <Button to="/book" className="mt-3 w-full" onClick={() => setMobileOpen(false)}>
+            <Button to="/book" className="mt-2 w-full" onClick={() => setMobileOpen(false)}>
               Book Now
             </Button>
           </div>

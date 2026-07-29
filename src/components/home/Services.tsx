@@ -1,47 +1,53 @@
 import { services } from '../../data/services'
 import { Button } from '../ui/Button'
-import { Card } from '../ui/Card'
 import { SectionHeading } from '../ui/SectionHeading'
 
 export function Services() {
   return (
-    <section className="py-16 lg:py-24" id="services">
+    <section className="py-24 lg:py-32" id="services">
       <div className="container-page">
         <SectionHeading
           eyebrow="Services & Pricing"
-          title="Personalised training for every goal"
-          subtitle="Every session is tailored to you — whether you are training solo, with a friend, or preparing for a special occasion."
+          title="Tailored to every goal"
+          subtitle="Every session is built around you — training solo, alongside a friend, or preparing for a moment that matters."
           align="center"
         />
 
-        <div className="grid gap-6 sm:grid-cols-2">
+        <div className="border-t border-white/10">
           {services.map((service) => {
             const Icon = service.icon
             return (
-              <Card key={service.id} hover className="flex flex-col">
-                <div className="mb-4 flex items-start justify-between gap-4">
-                  <div className="rounded-xl bg-teal/10 p-3">
-                    <Icon className="h-6 w-6 text-teal" />
-                  </div>
-                  <div className="text-right">
-                    <p className="font-display text-2xl font-bold text-coral">{service.price}</p>
-                    {service.priceNote && (
-                      <p className="text-xs text-muted">{service.priceNote}</p>
-                    )}
+              <div
+                key={service.id}
+                className="group grid gap-6 border-b border-white/10 py-9 transition-colors sm:grid-cols-[1fr_auto] sm:items-start"
+              >
+                <div className="flex gap-5">
+                  <span className="mt-1 flex h-11 w-11 shrink-0 items-center justify-center border border-white/15 text-gold transition-colors group-hover:border-gold/60">
+                    <Icon className="h-5 w-5" />
+                  </span>
+                  <div>
+                    <h3 className="font-display text-2xl text-ivory">{service.title}</h3>
+                    <p className="mt-3 max-w-xl leading-relaxed text-ash">
+                      {service.description}
+                    </p>
                   </div>
                 </div>
-                <h3 className="font-display text-xl font-bold text-charcoal">{service.title}</h3>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">
-                  {service.description}
-                </p>
-              </Card>
+                <div className="pl-16 sm:pl-8 sm:text-right">
+                  <p className="font-display text-3xl text-gold">{service.price}</p>
+                  {service.priceNote && (
+                    <p className="mt-2 text-[0.66rem] uppercase tracking-[0.2em] text-ash-dim">
+                      {service.priceNote}
+                    </p>
+                  )}
+                </div>
+              </div>
             )
           })}
         </div>
 
-        <div className="mt-12 text-center">
+        <div className="mt-14 text-center">
           <Button to="/book" size="lg">
-            Book An Appointment Now
+            Book an Appointment
           </Button>
         </div>
       </div>

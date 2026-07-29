@@ -92,21 +92,21 @@ export function BookingWizard() {
   if (submitted) {
     return (
       <Card className="mx-auto max-w-lg text-center">
-        <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-teal/10">
-          <CheckCircle2 className="h-8 w-8 text-teal" />
+        <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full border border-gold/40">
+          <CheckCircle2 className="h-7 w-7 text-gold" />
         </div>
-        <h2 className="font-display text-2xl font-bold text-charcoal">Booking Request Sent</h2>
-        <p className="mt-3 text-muted">
-          Thank you, {details.name}! Sandra will review your request and confirm your appointment
-          shortly.
+        <h2 className="font-display text-3xl text-ivory">Request received</h2>
+        <p className="mt-4 text-ash">
+          Thank you, {details.name}. Sandra will review your request and confirm your appointment
+          personally.
         </p>
-        <p className="mt-4 text-sm text-muted">
-          Need to reach her sooner? Call{' '}
-          <a href={siteConfig.phoneHref} className="font-semibold text-teal">
+        <p className="mt-6 text-sm text-ash">
+          Need her sooner? Call{' '}
+          <a href={siteConfig.phoneHref} className="text-gold hover:text-gold-light">
             {siteConfig.phone}
           </a>{' '}
           or email{' '}
-          <a href={siteConfig.emailHref} className="font-semibold text-teal">
+          <a href={siteConfig.emailHref} className="text-gold hover:text-gold-light">
             {siteConfig.email}
           </a>
         </p>
@@ -116,25 +116,29 @@ export function BookingWizard() {
 
   return (
     <div>
-      <div className="mb-8 flex items-center justify-center gap-2">
+      <div className="mb-10 flex items-center justify-center gap-2">
         {STEPS.map((label, index) => (
           <div key={label} className="flex items-center gap-2">
             <div
-              className={`flex h-8 w-8 items-center justify-center rounded-full text-xs font-bold ${
-                index <= step ? 'bg-teal text-white' : 'bg-cream-dark text-muted'
+              className={`flex h-8 w-8 items-center justify-center rounded-full border text-xs font-medium transition-colors ${
+                index <= step
+                  ? 'border-gold bg-gold text-obsidian'
+                  : 'border-white/15 text-ash-dim'
               }`}
             >
               {index + 1}
             </div>
             <span
-              className={`hidden text-sm sm:inline ${
-                index <= step ? 'font-medium text-charcoal' : 'text-muted'
+              className={`hidden text-[0.68rem] uppercase tracking-[0.18em] sm:inline ${
+                index <= step ? 'text-ivory' : 'text-ash-dim'
               }`}
             >
               {label}
             </span>
             {index < STEPS.length - 1 && (
-              <div className={`mx-1 h-px w-6 sm:w-10 ${index < step ? 'bg-teal' : 'bg-cream-dark'}`} />
+              <div
+                className={`mx-1 h-px w-6 sm:w-10 ${index < step ? 'bg-gold' : 'bg-white/15'}`}
+              />
             )}
           </div>
         ))}
@@ -143,28 +147,28 @@ export function BookingWizard() {
       <Card className="mx-auto max-w-2xl">
         {step === 0 && (
           <>
-            <h2 className="mb-4 font-display text-xl font-bold">Choose a service</h2>
+            <h2 className="mb-6 font-display text-2xl text-ivory">Choose a service</h2>
             <ServiceSelect selectedId={serviceId} onSelect={setServiceId} />
           </>
         )}
 
         {step === 1 && (
           <>
-            <h2 className="mb-4 font-display text-xl font-bold">Pick a date</h2>
+            <h2 className="mb-6 font-display text-2xl text-ivory">Pick a date</h2>
             <DateSelect selected={date} onSelect={setDate} />
           </>
         )}
 
         {step === 2 && (
           <>
-            <h2 className="mb-4 font-display text-xl font-bold">Pick a time</h2>
+            <h2 className="mb-6 font-display text-2xl text-ivory">Pick a time</h2>
             <TimeSelect selected={time} onSelect={setTime} />
           </>
         )}
 
         {step === 3 && (
           <>
-            <h2 className="mb-4 font-display text-xl font-bold">Your details</h2>
+            <h2 className="mb-6 font-display text-2xl text-ivory">Your details</h2>
             <DetailsForm
               defaultValues={details}
               onSubmit={(data) => {
@@ -177,45 +181,47 @@ export function BookingWizard() {
 
         {step === 4 && service && date && (
           <>
-            <h2 className="mb-4 font-display text-xl font-bold">Review your booking</h2>
+            <h2 className="mb-6 font-display text-2xl text-ivory">Review your booking</h2>
             <dl className="space-y-3 text-sm">
-              <div className="flex justify-between border-b border-cream-dark pb-3">
-                <dt className="text-muted">Service</dt>
-                <dd className="font-medium text-charcoal">{service.title}</dd>
+              <div className="flex justify-between border-b border-white/10 pb-3">
+                <dt className="text-ash">Service</dt>
+                <dd className="text-ivory">{service.title}</dd>
               </div>
-              <div className="flex justify-between border-b border-cream-dark pb-3">
-                <dt className="text-muted">Price</dt>
-                <dd className="font-medium text-coral">{service.price}</dd>
+              <div className="flex justify-between border-b border-white/10 pb-3">
+                <dt className="text-ash">Price</dt>
+                <dd className="font-display text-lg text-gold">{service.price}</dd>
               </div>
-              <div className="flex justify-between border-b border-cream-dark pb-3">
-                <dt className="text-muted">Date</dt>
-                <dd className="font-medium text-charcoal">{formatBookingDate(date)}</dd>
+              <div className="flex justify-between border-b border-white/10 pb-3">
+                <dt className="text-ash">Date</dt>
+                <dd className="text-ivory">{formatBookingDate(date)}</dd>
               </div>
-              <div className="flex justify-between border-b border-cream-dark pb-3">
-                <dt className="text-muted">Time</dt>
-                <dd className="font-medium text-charcoal">{time}</dd>
+              <div className="flex justify-between border-b border-white/10 pb-3">
+                <dt className="text-ash">Time</dt>
+                <dd className="text-ivory">{time}</dd>
               </div>
-              <div className="flex justify-between border-b border-cream-dark pb-3">
-                <dt className="text-muted">Name</dt>
-                <dd className="font-medium text-charcoal">{details.name}</dd>
+              <div className="flex justify-between border-b border-white/10 pb-3">
+                <dt className="text-ash">Name</dt>
+                <dd className="text-ivory">{details.name}</dd>
               </div>
-              <div className="flex justify-between border-b border-cream-dark pb-3">
-                <dt className="text-muted">Phone</dt>
-                <dd className="font-medium text-charcoal">{details.phone}</dd>
+              <div className="flex justify-between border-b border-white/10 pb-3">
+                <dt className="text-ash">Phone</dt>
+                <dd className="text-ivory">{details.phone}</dd>
               </div>
-              <div className="flex justify-between border-b border-cream-dark pb-3">
-                <dt className="text-muted">Email</dt>
-                <dd className="font-medium text-charcoal">{details.email}</dd>
+              <div className="flex justify-between border-b border-white/10 pb-3">
+                <dt className="text-ash">Email</dt>
+                <dd className="text-ivory">{details.email}</dd>
               </div>
               {details.message && (
-                <div className="border-b border-cream-dark pb-3">
-                  <dt className="text-muted">Message</dt>
-                  <dd className="mt-1 font-medium text-charcoal">{details.message}</dd>
+                <div className="border-b border-white/10 pb-3">
+                  <dt className="text-ash">Message</dt>
+                  <dd className="mt-1 text-ivory">{details.message}</dd>
                 </div>
               )}
             </dl>
             {error && (
-              <p className="mt-4 rounded-lg bg-coral/10 px-4 py-3 text-sm text-coral">{error}</p>
+              <p className="mt-4 border border-red-500/40 bg-red-500/10 px-4 py-3 text-sm text-red-300">
+                {error}
+              </p>
             )}
           </>
         )}

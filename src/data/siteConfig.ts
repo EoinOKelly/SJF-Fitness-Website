@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: 'SJF Fitness Portlaoise',
   owner: 'Sandra Furney',
-  tagline: 'Personal Trainer and Qualified Chef with nutrition, based in Portlaoise.',
-  subtitle: 'Female Personal Trainer · Private Premises',
+  tagline: 'Private one-to-one personal training, nutrition and cooking expertise in Portlaoise.',
+  subtitle: 'Private one-to-one personal training with Sandra Furney, in a discreet Portlaoise studio.',
   phone: '086 2523947',
   phoneHref: 'tel:+353862523947',
   email: 'sandra@sjffitnessportlaoise.com',

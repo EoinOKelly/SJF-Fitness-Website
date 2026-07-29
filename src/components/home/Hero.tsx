@@ -1,52 +1,73 @@
-import { ArrowRight, CheckCircle2 } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { siteConfig } from '../../data/siteConfig'
 import { Button } from '../ui/Button'
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-charcoal text-white">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--color-teal)_0%,_transparent_50%)] opacity-20" />
-      <div className="container-page relative grid gap-10 py-16 lg:grid-cols-2 lg:items-center lg:py-24">
-        <div>
-          <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-teal">
-            Private Premises · Portlaoise
-          </p>
-          <h1 className="text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
-            {siteConfig.owner}
+    <section className="relative flex min-h-[92vh] w-full flex-col overflow-hidden bg-obsidian">
+      {/* Warm fallback tone shown before/behind the video */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_72%_18%,rgba(201,163,92,0.16),transparent_55%)]" />
+
+      {/*
+        Full-bleed landing video.
+        Drop the file in as: public/hero.mp4  (optional still: public/hero-poster.jpg)
+      */}
+      <video
+        className="absolute inset-0 h-full w-full object-cover opacity-70"
+        autoPlay
+        muted
+        loop
+        playsInline
+        aria-hidden="true"
+        poster="/hero-poster.jpg"
+      >
+        <source src="/hero.mp4" type="video/mp4" />
+      </video>
+
+      {/* Legibility washes */}
+      <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/55 to-obsidian/45" />
+      <div className="absolute inset-0 bg-gradient-to-r from-obsidian/85 via-obsidian/25 to-transparent" />
+
+      <div className="container-page relative flex flex-1 flex-col justify-center py-28">
+        <div className="max-w-3xl">
+          <div className="mb-7 flex items-center gap-3">
+            <span className="h-px w-10 bg-gold/70" />
+            <span className="eyebrow">Private Personal Training · Portlaoise</span>
+          </div>
+
+          <h1 className="font-display text-5xl font-medium leading-[1.02] tracking-tight text-ivory sm:text-6xl lg:text-7xl">
+            Your strongest self,
+            <span className="block italic text-gold">in private.</span>
           </h1>
-          <p className="mt-4 text-xl text-white/90">{siteConfig.tagline}</p>
-          <p className="mt-2 text-white/70">{siteConfig.subtitle}</p>
 
-          <ul className="mt-8 grid gap-2 sm:grid-cols-2">
-            {siteConfig.highlights.map((item) => (
-              <li key={item} className="flex items-center gap-2 text-sm text-white/85">
-                <CheckCircle2 className="h-4 w-4 shrink-0 text-teal" />
-                {item}
-              </li>
-            ))}
-          </ul>
+          <p className="mt-8 max-w-xl text-lg leading-relaxed text-ash">
+            One-to-one personal training, nutrition and real cooking expertise with{' '}
+            {siteConfig.owner} — by appointment, in a discreet studio that is yours alone.
+          </p>
 
-          <div className="mt-10 flex flex-wrap gap-4">
+          <div className="mt-11 flex flex-wrap gap-4">
             <Button to="/book" size="lg">
-              Book Now
+              Book Your Session
               <ArrowRight className="h-4 w-4" />
             </Button>
-            <Button to="/contact" variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-charcoal">
-              Contact Sandra
+            <Button to="/contact" variant="outline" size="lg">
+              Enquire
             </Button>
           </div>
         </div>
+      </div>
 
-        <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-gradient-to-br from-teal/40 to-coral/30 lg:aspect-square">
-          <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
-            <p className="font-display text-2xl font-bold text-white">Private Training Studio</p>
-            <p className="mt-2 text-sm text-white/80">
-              One-on-one attention in a comfortable, private space
-            </p>
-            <p className="mt-6 rounded-full bg-white/10 px-4 py-2 text-xs text-white/70">
-              Replace with studio photo in /public/hero.jpg
-            </p>
-          </div>
+      {/* Discipline strip */}
+      <div className="relative border-t border-white/10 bg-obsidian/50 backdrop-blur-sm">
+        <div className="container-page flex flex-wrap items-center gap-x-5 gap-y-2 py-4">
+          {siteConfig.highlights.map((item, index) => (
+            <span key={item} className="flex items-center gap-5">
+              {index > 0 && <span className="h-1 w-1 rotate-45 bg-gold/70" />}
+              <span className="text-[0.68rem] uppercase tracking-[0.22em] text-ash">
+                {item}
+              </span>
+            </span>
+          ))}
         </div>
       </div>
     </section>

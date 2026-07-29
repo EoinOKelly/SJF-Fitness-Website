@@ -13,20 +13,30 @@ export function SectionHeading({
   align = 'left',
   id,
 }: SectionHeadingProps) {
-  const alignClass = align === 'center' ? 'text-center mx-auto' : 'text-left'
+  const isCenter = align === 'center'
 
   return (
-    <div className={`mb-10 max-w-2xl ${alignClass}`} id={id}>
+    <div
+      className={`mb-14 max-w-2xl ${isCenter ? 'mx-auto text-center' : 'text-left'}`}
+      id={id}
+    >
       {eyebrow && (
-        <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-teal">
-          {eyebrow}
-        </p>
+        <div
+          className={`mb-5 flex items-center gap-3 ${isCenter ? 'justify-center' : ''}`}
+        >
+          <span className="h-px w-8 bg-gold/70" />
+          <span className="eyebrow">{eyebrow}</span>
+        </div>
       )}
-      <h2 className="text-3xl font-bold tracking-tight text-charcoal sm:text-4xl">
+      <h2 className="font-display text-4xl font-medium leading-[1.06] tracking-tight text-ivory sm:text-5xl">
         {title}
       </h2>
       {subtitle && (
-        <p className="mt-4 text-lg leading-relaxed text-muted">{subtitle}</p>
+        <p
+          className={`mt-6 text-lg leading-relaxed text-ash ${isCenter ? 'mx-auto' : ''}`}
+        >
+          {subtitle}
+        </p>
       )}
     </div>
   )
