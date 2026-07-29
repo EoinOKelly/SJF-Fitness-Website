@@ -6,12 +6,12 @@ type Size = 'sm' | 'md' | 'lg'
 
 const variantClasses: Record<Variant, string> = {
   primary:
-    'bg-gold text-obsidian hover:bg-gold-light',
+    'bg-brand text-obsidian hover:bg-brand-light',
   secondary:
-    'border border-white/15 bg-transparent text-ivory hover:border-gold hover:text-gold',
+    'border border-white/15 bg-transparent text-ivory hover:border-brand hover:text-brand',
   outline:
-    'border border-gold/50 text-ivory hover:bg-gold hover:text-obsidian',
-  ghost: 'text-ash hover:text-gold',
+    'border border-brand/50 text-ivory hover:bg-brand hover:text-obsidian',
+  ghost: 'text-ash hover:text-brand',
 }
 
 const sizeClasses: Record<Size, string> = {
@@ -21,7 +21,7 @@ const sizeClasses: Record<Size, string> = {
 }
 
 const baseClasses =
-  'inline-flex items-center justify-center gap-2.5 font-medium uppercase tracking-[0.2em] transition-all duration-300 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-obsidian disabled:pointer-events-none disabled:opacity-40'
+  'inline-flex items-center justify-center gap-2.5 font-semibold uppercase tracking-[0.2em] transition-all duration-300 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-obsidian disabled:pointer-events-none disabled:opacity-40'
 
 interface ButtonBaseProps {
   variant?: Variant

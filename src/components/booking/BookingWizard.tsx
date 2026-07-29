@@ -92,8 +92,8 @@ export function BookingWizard() {
   if (submitted) {
     return (
       <Card className="mx-auto max-w-lg text-center">
-        <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full border border-gold/40">
-          <CheckCircle2 className="h-7 w-7 text-gold" />
+        <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full border border-brand/40">
+          <CheckCircle2 className="h-7 w-7 text-brand" />
         </div>
         <h2 className="font-display text-3xl text-ivory">Request received</h2>
         <p className="mt-4 text-ash">
@@ -102,11 +102,11 @@ export function BookingWizard() {
         </p>
         <p className="mt-6 text-sm text-ash">
           Need her sooner? Call{' '}
-          <a href={siteConfig.phoneHref} className="text-gold hover:text-gold-light">
+          <a href={siteConfig.phoneHref} className="text-brand hover:text-brand-light">
             {siteConfig.phone}
           </a>{' '}
           or email{' '}
-          <a href={siteConfig.emailHref} className="text-gold hover:text-gold-light">
+          <a href={siteConfig.emailHref} className="text-brand hover:text-brand-light">
             {siteConfig.email}
           </a>
         </p>
@@ -122,7 +122,7 @@ export function BookingWizard() {
             <div
               className={`flex h-8 w-8 items-center justify-center rounded-full border text-xs font-medium transition-colors ${
                 index <= step
-                  ? 'border-gold bg-gold text-obsidian'
+                  ? 'border-brand bg-brand text-obsidian'
                   : 'border-white/15 text-ash-dim'
               }`}
             >
@@ -137,7 +137,7 @@ export function BookingWizard() {
             </span>
             {index < STEPS.length - 1 && (
               <div
-                className={`mx-1 h-px w-6 sm:w-10 ${index < step ? 'bg-gold' : 'bg-white/15'}`}
+                className={`mx-1 h-px w-6 sm:w-10 ${index < step ? 'bg-brand' : 'bg-white/15'}`}
               />
             )}
           </div>
@@ -189,7 +189,7 @@ export function BookingWizard() {
               </div>
               <div className="flex justify-between border-b border-white/10 pb-3">
                 <dt className="text-ash">Price</dt>
-                <dd className="font-display text-lg text-gold">{service.price}</dd>
+                <dd className="font-display text-lg text-brand">{service.price}</dd>
               </div>
               <div className="flex justify-between border-b border-white/10 pb-3">
                 <dt className="text-ash">Date</dt>

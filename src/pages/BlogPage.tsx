@@ -26,14 +26,14 @@ export function BlogPage() {
                 to={`/blog/${post.slug}`}
                 className="group block border-b border-white/10 py-9 transition-colors"
               >
-                <time className="text-[0.66rem] uppercase tracking-[0.2em] text-gold" dateTime={post.date}>
+                <time className="text-[0.66rem] uppercase tracking-[0.2em] text-brand" dateTime={post.date}>
                   {formatBlogDate(post.date)} · {post.author}
                 </time>
-                <h2 className="mt-3 font-display text-3xl text-ivory transition-colors group-hover:text-gold">
+                <h2 className="mt-3 font-display text-3xl text-ivory transition-colors group-hover:text-brand">
                   {post.title}
                 </h2>
                 <p className="mt-4 leading-relaxed text-ash">{post.excerpt}</p>
-                <span className="mt-6 inline-flex items-center gap-2 text-[0.7rem] font-medium uppercase tracking-[0.2em] text-ivory transition-colors group-hover:text-gold">
+                <span className="mt-6 inline-flex items-center gap-2 text-[0.7rem] font-medium uppercase tracking-[0.2em] text-ivory transition-colors group-hover:text-brand">
                   Read article
                   <ArrowRight className="h-4 w-4" />
                 </span>

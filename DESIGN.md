@@ -18,9 +18,9 @@ Colors (Tailwind v4 `@theme`, so `bg-obsidian`, `text-gold`, etc. exist):
 - `obsidian #0a0a0b` — page ground
 - `onyx #111114` — raised surface / alt sections
 - `graphite #17171b` — cards, inputs
-- `gold #c9a35c` — primary accent (line, numerals, CTA)
-- `gold-light #e7d3a1` — highlight / gradient top
-- `gold-dark #9a7838` — gradient base / hover
+- `brand #fb2e01` — primary accent (SJF logo red: line, numerals, CTA)
+- `brand-light #ff6a45` — highlight / hover
+- `brand-dark #c41f00` — deeper accent / hover-on-fill
 - `ivory #f4f1ea` — primary text (warm off-white, never pure #fff)
 - `ash #a7a199` — secondary text
 - `ash-dim #8b857b` — tertiary / meta

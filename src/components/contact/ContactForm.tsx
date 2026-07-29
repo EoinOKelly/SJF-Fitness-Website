@@ -43,8 +43,8 @@ export function ContactForm() {
   if (result?.ok) {
     return (
       <Card className="text-center">
-        <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full border border-gold/40">
-          <CheckCircle2 className="h-6 w-6 text-gold" />
+        <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full border border-brand/40">
+          <CheckCircle2 className="h-6 w-6 text-brand" />
         </div>
         <p className="text-ivory">{result.message}</p>
         <Button
@@ -71,7 +71,7 @@ export function ContactForm() {
             id="contact-name"
             type="text"
             autoComplete="name"
-            className="w-full border border-white/10 bg-obsidian px-4 py-3 text-ivory placeholder:text-ash-dim transition-colors focus:border-gold focus:outline-none"
+            className="w-full border border-white/10 bg-obsidian px-4 py-3 text-ivory placeholder:text-ash-dim transition-colors focus:border-brand focus:outline-none"
             {...register('name')}
           />
           {errors.name && <p className="mt-2 text-sm text-red-300">{errors.name.message}</p>}
@@ -86,7 +86,7 @@ export function ContactForm() {
               id="contact-phone"
               type="tel"
               autoComplete="tel"
-              className="w-full border border-white/10 bg-obsidian px-4 py-3 text-ivory placeholder:text-ash-dim transition-colors focus:border-gold focus:outline-none"
+              className="w-full border border-white/10 bg-obsidian px-4 py-3 text-ivory placeholder:text-ash-dim transition-colors focus:border-brand focus:outline-none"
               {...register('phone')}
             />
             {errors.phone && <p className="mt-2 text-sm text-red-300">{errors.phone.message}</p>}
@@ -100,7 +100,7 @@ export function ContactForm() {
               id="contact-email"
               type="email"
               autoComplete="email"
-              className="w-full border border-white/10 bg-obsidian px-4 py-3 text-ivory placeholder:text-ash-dim transition-colors focus:border-gold focus:outline-none"
+              className="w-full border border-white/10 bg-obsidian px-4 py-3 text-ivory placeholder:text-ash-dim transition-colors focus:border-brand focus:outline-none"
               {...register('email')}
             />
             {errors.email && <p className="mt-2 text-sm text-red-300">{errors.email.message}</p>}
@@ -114,7 +114,7 @@ export function ContactForm() {
           <textarea
             id="contact-message"
             rows={5}
-            className="w-full border border-white/10 bg-obsidian px-4 py-3 text-ivory placeholder:text-ash-dim transition-colors focus:border-gold focus:outline-none"
+            className="w-full border border-white/10 bg-obsidian px-4 py-3 text-ivory placeholder:text-ash-dim transition-colors focus:border-brand focus:outline-none"
             {...register('message')}
           />
           {errors.message && <p className="mt-2 text-sm text-red-300">{errors.message.message}</p>}

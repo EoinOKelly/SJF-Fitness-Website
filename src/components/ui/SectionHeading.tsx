@@ -24,11 +24,11 @@ export function SectionHeading({
         <div
           className={`mb-5 flex items-center gap-3 ${isCenter ? 'justify-center' : ''}`}
         >
-          <span className="h-px w-8 bg-gold/70" />
+          <span className="h-px w-8 bg-brand/70" />
           <span className="eyebrow">{eyebrow}</span>
         </div>
       )}
-      <h2 className="font-display text-4xl font-medium leading-[1.06] tracking-tight text-ivory sm:text-5xl">
+      <h2 className="font-display text-4xl font-semibold leading-[1.06] tracking-tight text-ivory sm:text-5xl">
         {title}
       </h2>
       {subtitle && (

@@ -27,7 +27,7 @@ export function DetailsForm({ defaultValues, onSubmit }: DetailsFormProps) {
           id="name"
           type="text"
           autoComplete="name"
-          className="w-full border border-white/10 bg-obsidian px-4 py-3 text-ivory placeholder:text-ash-dim transition-colors focus:border-gold focus:outline-none"
+          className="w-full border border-white/10 bg-obsidian px-4 py-3 text-ivory placeholder:text-ash-dim transition-colors focus:border-brand focus:outline-none"
           {...register('name')}
         />
         {errors.name && <p className="mt-2 text-sm text-red-300">{errors.name.message}</p>}
@@ -42,7 +42,7 @@ export function DetailsForm({ defaultValues, onSubmit }: DetailsFormProps) {
             id="phone"
             type="tel"
             autoComplete="tel"
-            className="w-full border border-white/10 bg-obsidian px-4 py-3 text-ivory placeholder:text-ash-dim transition-colors focus:border-gold focus:outline-none"
+            className="w-full border border-white/10 bg-obsidian px-4 py-3 text-ivory placeholder:text-ash-dim transition-colors focus:border-brand focus:outline-none"
             {...register('phone')}
           />
           {errors.phone && <p className="mt-2 text-sm text-red-300">{errors.phone.message}</p>}
@@ -56,7 +56,7 @@ export function DetailsForm({ defaultValues, onSubmit }: DetailsFormProps) {
             id="email"
             type="email"
             autoComplete="email"
-            className="w-full border border-white/10 bg-obsidian px-4 py-3 text-ivory placeholder:text-ash-dim transition-colors focus:border-gold focus:outline-none"
+            className="w-full border border-white/10 bg-obsidian px-4 py-3 text-ivory placeholder:text-ash-dim transition-colors focus:border-brand focus:outline-none"
             {...register('email')}
           />
           {errors.email && <p className="mt-2 text-sm text-red-300">{errors.email.message}</p>}
@@ -71,7 +71,7 @@ export function DetailsForm({ defaultValues, onSubmit }: DetailsFormProps) {
           id="message"
           rows={4}
           placeholder="Tell Sandra about your goals or any questions..."
-          className="w-full border border-white/10 bg-obsidian px-4 py-3 text-ivory placeholder:text-ash-dim transition-colors focus:border-gold focus:outline-none"
+          className="w-full border border-white/10 bg-obsidian px-4 py-3 text-ivory placeholder:text-ash-dim transition-colors focus:border-brand focus:outline-none"
           {...register('message')}
         />
       </div>

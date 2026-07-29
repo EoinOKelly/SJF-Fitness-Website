@@ -7,9 +7,9 @@
   --color-obsidian: #0a0a0b;
   --color-onyx: #111114;
   --color-graphite: #17171b;
-  --color-gold: #c9a35c;
-  --color-gold-light: #e7d3a1;
-  --color-gold-dark: #9a7838;
+  --color-brand: #fb2e01;
+  --color-brand-light: #ff6a45;
+  --color-brand-dark: #c41f00;
   --color-ivory: #f4f1ea;
   --color-ash: #a7a199;
   --color-ash-dim: #8b857b;
@@ -31,7 +31,7 @@
   }
 
   ::selection {
-    background-color: var(--color-gold);
+    background-color: var(--color-brand);
     color: var(--color-obsidian);
   }
 }
@@ -43,7 +43,7 @@
 
   /* Small wide-tracked label used sparingly as a system kicker */
   .eyebrow {
-    @apply text-[0.7rem] font-medium uppercase tracking-[0.28em] text-gold;
+    @apply text-[0.7rem] font-semibold uppercase tracking-[0.28em] text-brand;
   }
 }
 
@@ -61,10 +61,10 @@
   }
 }
 
-/* react-day-picker — dark obsidian + gold */
+/* react-day-picker — dark obsidian + brand red */
 .rdp-root {
-  --rdp-accent-color: var(--color-gold);
-  --rdp-accent-background-color: color-mix(in srgb, var(--color-gold) 18%, transparent);
+  --rdp-accent-color: var(--color-brand);
+  --rdp-accent-background-color: color-mix(in srgb, var(--color-brand) 18%, transparent);
   --rdp-background-color: transparent;
   --rdp-day-height: 2.6rem;
   --rdp-day-width: 2.6rem;
@@ -78,16 +78,16 @@
 }
 
 .rdp-day_button:hover:not([disabled]) {
-  background-color: color-mix(in srgb, var(--color-gold) 22%, transparent);
+  background-color: color-mix(in srgb, var(--color-brand) 22%, transparent);
 }
 
 .rdp-selected .rdp-day_button {
-  background-color: var(--color-gold) !important;
+  background-color: var(--color-brand) !important;
   color: var(--color-obsidian) !important;
   font-weight: 600;
 }
 
 .rdp-day_button:focus-visible {
-  outline: 2px solid var(--color-gold);
+  outline: 2px solid var(--color-brand);
   outline-offset: 2px;
 }

@@ -21,10 +21,10 @@ export function TimeSelect({ selected, onSelect }: TimeSelectProps) {
               key={slot}
               type="button"
               onClick={() => onSelect(slot)}
-              className={`border px-3 py-2.5 text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-graphite ${
+              className={`border px-3 py-2.5 text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-graphite ${
                 isSelected
-                  ? 'border-gold bg-gold text-obsidian'
-                  : 'border-white/10 text-ash hover:border-gold/50 hover:text-ivory'
+                  ? 'border-brand bg-brand text-obsidian'
+                  : 'border-white/10 text-ash hover:border-brand/50 hover:text-ivory'
               }`}
               aria-pressed={isSelected}
             >

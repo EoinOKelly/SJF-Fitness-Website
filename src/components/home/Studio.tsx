@@ -27,7 +27,7 @@ export function Studio() {
 
           <div className="flex flex-col justify-center border border-white/10 bg-graphite p-10 lg:col-span-2">
             <div className="flex items-center gap-4">
-              <span className="flex h-12 w-12 items-center justify-center border border-gold/40 text-gold">
+              <span className="flex h-12 w-12 items-center justify-center border border-brand/40 text-brand">
                 <MapPin className="h-5 w-5" />
               </span>
               <h3 className="font-display text-2xl text-ivory">Find the Studio</h3>
@@ -45,7 +45,7 @@ export function Studio() {
               href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(siteConfig.address.full)}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-8 inline-flex items-center gap-2 text-[0.72rem] font-medium uppercase tracking-[0.2em] text-gold transition-colors hover:text-gold-light"
+              className="mt-8 inline-flex items-center gap-2 text-[0.72rem] font-medium uppercase tracking-[0.2em] text-brand transition-colors hover:text-brand-light"
             >
               Open in Google Maps →
             </a>

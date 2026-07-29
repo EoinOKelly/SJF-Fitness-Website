@@ -27,20 +27,20 @@ export function ContactPage() {
                 <h3 className="eyebrow">Direct contact</h3>
                 <a
                   href={siteConfig.phoneHref}
-                  className="flex items-center gap-3 text-ash transition-colors hover:text-gold"
+                  className="flex items-center gap-3 text-ash transition-colors hover:text-brand"
                 >
-                  <Phone className="h-5 w-5 shrink-0 text-gold" />
+                  <Phone className="h-5 w-5 shrink-0 text-brand" />
                   {siteConfig.phone}
                 </a>
                 <a
                   href={siteConfig.emailHref}
-                  className="flex items-center gap-3 text-ash transition-colors hover:text-gold"
+                  className="flex items-center gap-3 text-ash transition-colors hover:text-brand"
                 >
-                  <Mail className="h-5 w-5 shrink-0 text-gold" />
+                  <Mail className="h-5 w-5 shrink-0 text-brand" />
                   {siteConfig.email}
                 </a>
                 <div className="flex items-start gap-3 text-ash">
-                  <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-gold" />
+                  <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-brand" />
                   <address className="not-italic">{siteConfig.address.full}</address>
                 </div>
               </div>

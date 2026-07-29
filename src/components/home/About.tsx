@@ -13,7 +13,7 @@ export function About() {
             style={{ backgroundImage: 'url(/SJF_Hero.jpg)' }}
           >
             <div className="absolute inset-0 bg-gradient-to-t from-obsidian/85 via-obsidian/20 to-transparent" />
-            <span className="pointer-events-none absolute inset-4 border border-gold/25" />
+            <span className="pointer-events-none absolute inset-4 border border-brand/25" />
             <div className="absolute inset-x-0 bottom-0 p-8">
               <p className="font-display text-3xl text-ivory">{siteConfig.owner}</p>
               <p className="eyebrow mt-3">Founder · Personal Coach</p>

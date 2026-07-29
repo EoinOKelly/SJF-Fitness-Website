@@ -19,14 +19,14 @@ export function BlogPreview() {
               to={`/blog/${post.slug}`}
               className="group flex flex-col bg-obsidian p-9 transition-colors hover:bg-graphite"
             >
-              <time className="text-[0.66rem] uppercase tracking-[0.2em] text-gold" dateTime={post.date}>
+              <time className="text-[0.66rem] uppercase tracking-[0.2em] text-brand" dateTime={post.date}>
                 {formatBlogDate(post.date)}
               </time>
-              <h3 className="mt-4 font-display text-2xl text-ivory transition-colors group-hover:text-gold">
+              <h3 className="mt-4 font-display text-2xl text-ivory transition-colors group-hover:text-brand">
                 {post.title}
               </h3>
               <p className="mt-4 flex-1 leading-relaxed text-ash">{post.excerpt}</p>
-              <span className="mt-7 inline-flex items-center gap-2 text-[0.7rem] font-medium uppercase tracking-[0.2em] text-ivory transition-colors group-hover:text-gold">
+              <span className="mt-7 inline-flex items-center gap-2 text-[0.7rem] font-medium uppercase tracking-[0.2em] text-ivory transition-colors group-hover:text-brand">
                 Read
                 <ArrowRight className="h-4 w-4" />
               </span>

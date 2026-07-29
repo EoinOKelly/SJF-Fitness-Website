@@ -14,7 +14,7 @@ export function BlogPostPage() {
           <h1 className="font-display text-3xl text-ivory">Post not found</h1>
           <Link
             to="/blog"
-            className="mt-6 inline-block text-[0.72rem] uppercase tracking-[0.2em] text-gold hover:text-gold-light"
+            className="mt-6 inline-block text-[0.72rem] uppercase tracking-[0.2em] text-brand hover:text-brand-light"
           >
             ← Back to the journal
           </Link>
@@ -29,14 +29,14 @@ export function BlogPostPage() {
         <div className="container-page">
           <Link
             to="/blog"
-            className="mb-12 inline-flex items-center gap-2 text-[0.7rem] font-medium uppercase tracking-[0.2em] text-ash transition-colors hover:text-gold"
+            className="mb-12 inline-flex items-center gap-2 text-[0.7rem] font-medium uppercase tracking-[0.2em] text-ash transition-colors hover:text-brand"
           >
             <ArrowLeft className="h-4 w-4" />
             Back to the journal
           </Link>
 
           <header className="mx-auto max-w-2xl">
-            <time className="text-[0.66rem] uppercase tracking-[0.2em] text-gold" dateTime={post.date}>
+            <time className="text-[0.66rem] uppercase tracking-[0.2em] text-brand" dateTime={post.date}>
               {formatBlogDate(post.date)} · {post.author}
             </time>
             <h1 className="mt-4 font-display text-4xl leading-tight text-ivory sm:text-5xl">

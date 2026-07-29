@@ -6,7 +6,7 @@ export function Hero() {
   return (
     <section className="relative flex min-h-[92vh] w-full flex-col overflow-hidden bg-obsidian">
       {/* Warm fallback tone shown before/behind the video */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_72%_18%,rgba(201,163,92,0.16),transparent_55%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_72%_18%,rgba(251,46,1,0.14),transparent_55%)]" />
 
       {/*
         Full-bleed landing video.
@@ -31,13 +31,13 @@ export function Hero() {
       <div className="container-page relative flex flex-1 flex-col justify-center py-28">
         <div className="max-w-3xl">
           <div className="mb-7 flex items-center gap-3">
-            <span className="h-px w-10 bg-gold/70" />
+            <span className="h-px w-10 bg-brand/70" />
             <span className="eyebrow">Private Personal Training · Portlaoise</span>
           </div>
 
-          <h1 className="font-display text-5xl font-medium leading-[1.02] tracking-tight text-ivory sm:text-6xl lg:text-7xl">
+          <h1 className="font-display text-5xl font-bold leading-[1.02] tracking-tight text-ivory sm:text-6xl lg:text-7xl">
             Your strongest self,
-            <span className="block italic text-gold">in private.</span>
+            <span className="block italic text-brand">in private.</span>
           </h1>
 
           <p className="mt-8 max-w-xl text-lg leading-relaxed text-ash">
@@ -62,7 +62,7 @@ export function Hero() {
         <div className="container-page flex flex-wrap items-center gap-x-5 gap-y-2 py-4">
           {siteConfig.highlights.map((item, index) => (
             <span key={item} className="flex items-center gap-5">
-              {index > 0 && <span className="h-1 w-1 rotate-45 bg-gold/70" />}
+              {index > 0 && <span className="h-1 w-1 rotate-45 bg-brand/70" />}
               <span className="text-[0.68rem] uppercase tracking-[0.22em] text-ash">
                 {item}
               </span>

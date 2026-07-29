@@ -9,7 +9,7 @@ export function Header() {
 
   const navLinkClass = ({ isActive }: { isActive: boolean }) =>
     `text-[0.72rem] font-medium uppercase tracking-[0.2em] transition-colors ${
-      isActive ? 'text-gold' : 'text-ash hover:text-ivory'
+      isActive ? 'text-brand' : 'text-ash hover:text-ivory'
     }`
 
   return (
@@ -20,16 +20,15 @@ export function Header() {
           className="group flex items-center gap-3"
           onClick={() => setMobileOpen(false)}
         >
-          <span className="flex h-10 w-10 items-center justify-center border border-gold/50 font-display text-lg font-semibold text-gold transition-colors group-hover:bg-gold group-hover:text-obsidian">
-            S
-          </span>
-          <span className="flex flex-col leading-none">
-            <span className="font-display text-lg tracking-wide text-ivory transition-colors group-hover:text-gold">
-              SJF Fitness
-            </span>
-            <span className="mt-1 text-[0.6rem] uppercase tracking-[0.32em] text-ash-dim">
-              Portlaoise
-            </span>
+          <img
+            src="/SJF_logo_dark.png"
+            alt="SJF Fitness"
+            className="h-7 w-auto sm:h-8"
+            width={642}
+            height={160}
+          />
+          <span className="hidden text-[0.6rem] uppercase tracking-[0.32em] text-ash-dim sm:inline">
+            Portlaoise
           </span>
         </Link>
 
@@ -44,7 +43,7 @@ export function Header() {
         <div className="hidden items-center gap-6 md:flex">
           <a
             href={siteConfig.phoneHref}
-            className="flex items-center gap-2 text-[0.72rem] font-medium tracking-wide text-ash transition-colors hover:text-gold"
+            className="flex items-center gap-2 text-[0.72rem] font-medium tracking-wide text-ash transition-colors hover:text-brand"
           >
             <Phone className="h-3.5 w-3.5" />
             {siteConfig.phone}
@@ -56,7 +55,7 @@ export function Header() {
 
         <button
           type="button"
-          className="p-2 text-ivory transition-colors hover:text-gold md:hidden"
+          className="p-2 text-ivory transition-colors hover:text-brand md:hidden"
           onClick={() => setMobileOpen((open) => !open)}
           aria-expanded={mobileOpen}
           aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
@@ -84,7 +83,7 @@ export function Header() {
             ))}
             <a
               href={siteConfig.phoneHref}
-              className="mt-1 flex items-center gap-2 text-[0.72rem] font-medium uppercase tracking-[0.2em] text-gold"
+              className="mt-1 flex items-center gap-2 text-[0.72rem] font-medium uppercase tracking-[0.2em] text-brand"
             >
               <Phone className="h-4 w-4" />
               {siteConfig.phone}

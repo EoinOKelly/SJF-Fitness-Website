@@ -8,8 +8,14 @@ export function Footer() {
       <div className="container-page py-16">
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
           <div>
-            <p className="font-display text-2xl tracking-wide text-ivory">SJF Fitness</p>
-            <p className="mt-1 text-[0.62rem] uppercase tracking-[0.32em] text-gold">Portlaoise</p>
+            <img
+              src="/SJF_logo_dark.png"
+              alt="SJF Fitness"
+              className="h-9 w-auto"
+              width={642}
+              height={160}
+            />
+            <p className="mt-3 text-[0.62rem] uppercase tracking-[0.32em] text-brand">Portlaoise</p>
             <p className="mt-6 max-w-xs text-sm leading-relaxed text-ash">
               {siteConfig.subtitle}
             </p>
@@ -22,7 +28,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     to={link.href}
-                    className="text-sm text-ash transition-colors hover:text-gold"
+                    className="text-sm text-ash transition-colors hover:text-brand"
                   >
                     {link.label}
                   </Link>
@@ -37,23 +43,23 @@ export function Footer() {
               <li>
                 <a
                   href={siteConfig.phoneHref}
-                  className="flex items-center gap-3 text-sm text-ash transition-colors hover:text-gold"
+                  className="flex items-center gap-3 text-sm text-ash transition-colors hover:text-brand"
                 >
-                  <Phone className="h-4 w-4 shrink-0 text-gold" />
+                  <Phone className="h-4 w-4 shrink-0 text-brand" />
                   {siteConfig.phone}
                 </a>
               </li>
               <li>
                 <a
                   href={siteConfig.emailHref}
-                  className="flex items-center gap-3 text-sm text-ash transition-colors hover:text-gold"
+                  className="flex items-center gap-3 text-sm text-ash transition-colors hover:text-brand"
                 >
-                  <Mail className="h-4 w-4 shrink-0 text-gold" />
+                  <Mail className="h-4 w-4 shrink-0 text-brand" />
                   {siteConfig.email}
                 </a>
               </li>
               <li className="flex items-start gap-3 text-sm text-ash">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-brand" />
                 <span>{siteConfig.address.full}</span>
               </li>
             </ul>
