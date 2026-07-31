@@ -37,12 +37,13 @@ export function Hero() {
 
           <h1 className="font-display text-5xl font-bold leading-[1.02] tracking-tight text-ivory sm:text-6xl lg:text-7xl">
             Your strongest self,
-            <span className="block italic text-brand">in private.</span>
+            <span className="block text-brand">in private.</span>
           </h1>
 
           <p className="mt-8 max-w-xl text-lg leading-relaxed text-ash">
-            One-to-one personal training, nutrition and real cooking expertise with{' '}
-            {siteConfig.owner} — by appointment, in a discreet studio that is yours alone.
+            One-to-one personal training, nutrition and real cooking know-how with{' '}
+            {siteConfig.owner}, a certified trainer and trained chef. By appointment, in a discreet
+            studio that is yours alone.
           </p>
 
           <div className="mt-11 flex flex-wrap gap-4">

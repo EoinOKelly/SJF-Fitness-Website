@@ -33,12 +33,9 @@ export function ServiceSelect({ selectedId, onSelect }: ServiceSelectProps) {
                 <Icon className="h-4 w-4" />
               </span>
               <div className="flex-1">
-                <div className="flex items-start justify-between gap-2">
-                  <h3 className="text-sm font-medium text-ivory">{service.title}</h3>
-                  <span className="shrink-0 font-display text-lg text-brand">{service.price}</span>
-                </div>
-                <p className="mt-1 text-[0.66rem] uppercase tracking-[0.16em] text-ash-dim">
-                  {service.priceNote}
+                <h3 className="text-sm font-medium text-ivory">{service.title}</h3>
+                <p className="mt-1 text-[0.72rem] leading-relaxed text-ash-dim">
+                  {service.description}
                 </p>
               </div>
             </div>

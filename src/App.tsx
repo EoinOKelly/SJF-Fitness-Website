@@ -1,8 +1,7 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { Layout } from './components/layout/Layout'
 import { BookPage } from './pages/BookPage'
-import { BlogPage } from './pages/BlogPage'
-import { BlogPostPage } from './pages/BlogPostPage'
+import { TestimonialsPage } from './pages/TestimonialsPage'
 import { ContactPage } from './pages/ContactPage'
 import { HomePage } from './pages/HomePage'
 
@@ -13,8 +12,9 @@ export function App() {
         <Route element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="book" element={<BookPage />} />
-          <Route path="blog" element={<BlogPage />} />
-          <Route path="blog/:slug" element={<BlogPostPage />} />
+          <Route path="testimonials" element={<TestimonialsPage />} />
+          <Route path="blog" element={<Navigate to="/testimonials" replace />} />
+          <Route path="blog/:slug" element={<Navigate to="/testimonials" replace />} />
           <Route path="contact" element={<ContactPage />} />
         </Route>
       </Routes>

@@ -15,7 +15,7 @@ export function ContactPage() {
           <SectionHeading
             eyebrow="Contact"
             title="Begin the conversation"
-            subtitle="Ready to start? Send Sandra a note to arrange a session or ask a question — she answers personally."
+            subtitle="Ready to start? Send Sandra a note to arrange a session or ask a question. She answers personally."
             align="center"
           />
 

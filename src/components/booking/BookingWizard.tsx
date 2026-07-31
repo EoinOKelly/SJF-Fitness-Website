@@ -70,7 +70,6 @@ export function BookingWizard() {
     const result = await submitToFormspree(import.meta.env.VITE_FORMSPREE_BOOKING_ID, {
       _subject: `New booking request: ${service.title}`,
       service: service.title,
-      price: service.price,
       date: formatBookingDateISO(date),
       dateFormatted: formatBookingDate(date),
       time,
@@ -186,10 +185,6 @@ export function BookingWizard() {
               <div className="flex justify-between border-b border-white/10 pb-3">
                 <dt className="text-ash">Service</dt>
                 <dd className="text-ivory">{service.title}</dd>
-              </div>
-              <div className="flex justify-between border-b border-white/10 pb-3">
-                <dt className="text-ash">Price</dt>
-                <dd className="font-display text-lg text-brand">{service.price}</dd>
               </div>
               <div className="flex justify-between border-b border-white/10 pb-3">
                 <dt className="text-ash">Date</dt>

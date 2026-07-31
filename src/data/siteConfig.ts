@@ -18,16 +18,16 @@ export const siteConfig = {
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2428.5!2d-7.300!3d53.034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sKealew+Business+Park!5e0!3m2!1sen!2sie!4v1',
   copyright: `Copyright SJF Fitness ${new Date().getFullYear()}`,
   highlights: [
+    'Trained Chef',
     'Weight Loss',
     'Menu Planning & Nutrition Advice',
     'Body Conditioning & Toning',
     'Strength & Conditioning',
-    'Outdoor Training Available',
   ],
   navLinks: [
     { label: 'Home', href: '/' },
     { label: 'Book Now', href: '/book' },
-    { label: 'Blog', href: '/blog' },
+    { label: 'Testimonials', href: '/testimonials' },
     { label: 'Contact', href: '/contact' },
   ],
   booking: {
