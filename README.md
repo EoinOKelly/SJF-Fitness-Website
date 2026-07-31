@@ -1,12 +1,12 @@
 # SJF Fitness Portlaoise
 
-Modern React website for [SJF Fitness Portlaoise](https://sjffitnessportlaoise.com) — Sandra Furney, personal trainer and nutrition expert.
+Modern React website for [SJF Fitness Portlaoise](https://sjffitnessportlaoise.com): Sandra Furney, personal trainer, nutrition expert and trained chef.
 
 ## Features
 
-- Responsive marketing site with Home, Book Now, Blog, and Contact pages
-- Multi-step booking wizard (service → date → time → details → review)
-- Static blog with migrated posts
+- Responsive marketing site with Home, Book Now, Testimonials, and Contact pages
+- Multi-step booking wizard (service, date, time, details, review)
+- Client testimonials section
 - Contact form with map embed
 - Formspree integration for booking and contact submissions
 
@@ -50,8 +50,8 @@ Without these set, forms show a fallback message directing users to call or emai
 
 Replace placeholder areas by adding images to `public/`:
 
-- `public/hero.jpg` — hero section background
-- `public/about.jpg` — about section photo
+- `public/hero.jpg` for the hero section background
+- `public/about.jpg` for the about section photo
 
 Update the Hero and About components to use `<img src="/hero.jpg" ... />` when photos are ready.
 
@@ -68,5 +68,5 @@ Set environment variables in your hosting provider's dashboard.
 ## Content Updates
 
 - Site config (phone, email, address): `src/data/siteConfig.ts`
-- Services & pricing: `src/data/services.ts`
-- Blog posts: `src/data/blogPosts.ts`
+- Services: `src/data/services.ts`
+- Testimonials: `src/data/testimonials.ts`

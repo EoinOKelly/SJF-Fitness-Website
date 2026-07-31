@@ -16,7 +16,7 @@ export function About() {
             <span className="pointer-events-none absolute inset-4 border border-brand/25" />
             <div className="absolute inset-x-0 bottom-0 p-8">
               <p className="font-display text-3xl text-ivory">{siteConfig.owner}</p>
-              <p className="eyebrow mt-3">Founder · Personal Coach</p>
+              <p className="eyebrow mt-3">Founder · Trainer &amp; Chef</p>
             </div>
           </div>
 
@@ -24,12 +24,24 @@ export function About() {
             <SectionHeading
               eyebrow="The Founder"
               title="Meet Sandra Furney"
-              subtitle="Certified personal trainer, nutrition expert and qualified chef."
+              subtitle="Certified personal trainer, nutrition expert and trained chef."
             />
+
+            <ul className="mb-8 grid grid-cols-1 gap-px border border-white/10 bg-white/10 sm:grid-cols-3">
+              {['Certified Personal Trainer', 'Nutrition Expert', 'Trained Chef'].map((item) => (
+                <li
+                  key={item}
+                  className="bg-obsidian px-5 py-4 text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-ivory"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+
             <div className="space-y-5 leading-relaxed text-ash">
               <p>
                 SJF Fitness is a private studio built around one belief: real results come from
-                real attention. Every session is led personally by Sandra — never handed off to a
+                real attention. Every session is led personally by Sandra, never handed off to a
                 rotating floor of instructors.
               </p>
               <p>
@@ -38,9 +50,9 @@ export function About() {
                 and every meal.
               </p>
               <p>
-                As a trainer, nutrition expert and qualified chef, Sandra brings the whole picture
-                together — how you train, how you eat, how you cook — in one discreet, welcoming
-                space.
+                As a fully trained chef, Sandra brings something most trainers cannot: real cooking
+                knowledge. She joins up how you train, how you eat and how you actually cook, so
+                your nutrition plan works in a real kitchen, not just on paper.
               </p>
             </div>
             <Button to="/contact" variant="outline" className="mt-10">

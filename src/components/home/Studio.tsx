@@ -9,7 +9,7 @@ export function Studio() {
         <SectionHeading
           eyebrow="The Studio"
           title="A space that is yours alone"
-          subtitle="Our studio at The Office Box, Kealew Business Park is a calm, private setting — no crowds, no waiting, no audience. Just you and the work."
+          subtitle="Our studio at The Office Box, Kealew Business Park is a calm, private setting with no crowds, no waiting and no audience. Just you and the work."
           align="center"
         />
 
