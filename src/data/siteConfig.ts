@@ -26,7 +26,7 @@ export const siteConfig = {
   ],
   navLinks: [
     { label: 'Home', href: '/' },
-    { label: 'Book Now', href: '/book' },
+    { label: 'Gallery', href: '/#gallery' },
     { label: 'Testimonials', href: '/testimonials' },
     { label: 'Contact', href: '/contact' },
   ],

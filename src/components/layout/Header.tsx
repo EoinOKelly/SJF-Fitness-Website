@@ -1,16 +1,43 @@
 import { useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { Menu, Phone, X } from 'lucide-react'
 import { siteConfig } from '../../data/siteConfig'
 import { Button } from '../ui/Button'
 
+function scrollToHash(hash: string) {
+  const id = hash.replace('#', '')
+  const el = document.getElementById(id)
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+}
+
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
+  const location = useLocation()
+  const navigate = useNavigate()
 
   const navLinkClass = ({ isActive }: { isActive: boolean }) =>
     `text-[0.72rem] font-medium uppercase tracking-[0.2em] transition-colors ${
       isActive ? 'text-brand' : 'text-ash hover:text-ivory'
     }`
+
+  function handleNavClick(
+    event: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) {
+    setMobileOpen(false)
+    if (!href.includes('#')) return
+
+    const [path, hash] = href.split('#')
+    const targetPath = path || '/'
+    if (location.pathname === targetPath) {
+      event.preventDefault()
+      scrollToHash(`#${hash}`)
+    } else {
+      event.preventDefault()
+      navigate(href)
+      window.setTimeout(() => scrollToHash(`#${hash}`), 80)
+    }
+  }
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-obsidian/80 backdrop-blur-md">
@@ -34,7 +61,13 @@ export function Header() {
 
         <nav className="hidden items-center gap-9 md:flex" aria-label="Main navigation">
           {siteConfig.navLinks.map((link) => (
-            <NavLink key={link.href} to={link.href} className={navLinkClass} end={link.href === '/'}>
+            <NavLink
+              key={link.href}
+              to={link.href}
+              className={navLinkClass}
+              end={link.href === '/'}
+              onClick={(event) => handleNavClick(event, link.href)}
+            >
               {link.label}
             </NavLink>
           ))}
@@ -76,7 +109,7 @@ export function Header() {
                 to={link.href}
                 className={navLinkClass}
                 end={link.href === '/'}
-                onClick={() => setMobileOpen(false)}
+                onClick={(event) => handleNavClick(event, link.href)}
               >
                 {link.label}
               </NavLink>
