@@ -1,21 +1,26 @@
 import { galleryImages } from '../../data/gallery'
+import { Reveal } from '../ui/Reveal'
 import { SectionHeading } from '../ui/SectionHeading'
 
 export function Gallery() {
   return (
     <section className="bg-onyx py-24 lg:py-32" id="gallery">
       <div className="container-page">
-        <SectionHeading
-          eyebrow="Gallery"
-          title="Inside the studio"
-          subtitle="A glimpse of private training with Sandra — calm space, focused work, real results."
-          align="center"
-        />
+        <Reveal>
+          <SectionHeading
+            eyebrow="Gallery"
+            title="Inside the studio"
+            subtitle="A glimpse of private training with Sandra — calm space, focused work, real results."
+            align="center"
+          />
+        </Reveal>
 
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 lg:auto-rows-[220px]">
-          {galleryImages.map((image) => (
-            <figure
+          {galleryImages.map((image, index) => (
+            <Reveal
               key={image.src}
+              as="figure"
+              delay={Math.min(index * 70, 280)}
               className={`group relative overflow-hidden border border-white/10 bg-graphite ${image.className ?? ''}`}
             >
               <img
@@ -29,7 +34,7 @@ export function Gallery() {
                   {image.alt}
                 </span>
               </figcaption>
-            </figure>
+            </Reveal>
           ))}
         </div>
       </div>

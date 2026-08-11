@@ -29,7 +29,7 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-to-r from-obsidian/85 via-obsidian/25 to-transparent" />
 
       <div className="container-page relative flex flex-1 flex-col justify-center py-28">
-        <div className="max-w-3xl">
+        <div className="hero-enter max-w-3xl">
           <div className="mb-7 flex items-center gap-3">
             <span className="h-px w-10 bg-brand/45" />
             <span className="eyebrow">Private Personal Training · Portlaoise</span>
@@ -59,7 +59,7 @@ export function Hero() {
       </div>
 
       {/* Discipline strip */}
-      <div className="relative border-t border-white/10 bg-obsidian/50 backdrop-blur-sm">
+      <div className="hero-enter-strip relative border-t border-white/10 bg-obsidian/50 backdrop-blur-sm">
         <div className="container-page flex flex-wrap items-center gap-x-5 gap-y-2 py-4">
           {siteConfig.highlights.map((item, index) => (
             <span key={item} className="flex items-center gap-5">

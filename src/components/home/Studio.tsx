@@ -1,20 +1,23 @@
 import { MapPin } from 'lucide-react'
 import { siteConfig } from '../../data/siteConfig'
+import { Reveal } from '../ui/Reveal'
 import { SectionHeading } from '../ui/SectionHeading'
 
 export function Studio() {
   return (
     <section className="bg-onyx py-24 lg:py-32" id="studio">
       <div className="container-page">
-        <SectionHeading
-          eyebrow="The Studio"
-          title="A space that is yours alone"
-          subtitle="Our studio at The Office Box, Kealew Business Park is a calm, private setting with no crowds, no waiting and no audience. Just you and the work."
-          align="center"
-        />
+        <Reveal>
+          <SectionHeading
+            eyebrow="The Studio"
+            title="A space that is yours alone"
+            subtitle="Our studio at The Office Box, Kealew Business Park is a calm, private setting with no crowds, no waiting and no audience. Just you and the work."
+            align="center"
+          />
+        </Reveal>
 
         <div className="grid gap-8 lg:grid-cols-5">
-          <div className="overflow-hidden border border-white/10 lg:col-span-3">
+          <Reveal className="overflow-hidden border border-white/10 lg:col-span-3" delay={80}>
             <iframe
               title="SJF Fitness studio location map"
               src={siteConfig.mapEmbedUrl}
@@ -23,9 +26,12 @@ export function Studio() {
               referrerPolicy="no-referrer-when-downgrade"
               allowFullScreen
             />
-          </div>
+          </Reveal>
 
-          <div className="flex flex-col justify-center border border-white/10 bg-graphite p-10 lg:col-span-2">
+          <Reveal
+            className="flex flex-col justify-center border border-white/10 bg-graphite p-10 lg:col-span-2"
+            delay={160}
+          >
             <div className="flex items-center gap-4">
               <span className="flex h-12 w-12 items-center justify-center border border-brand/40 text-brand">
                 <MapPin className="h-5 w-5" />
@@ -49,7 +55,7 @@ export function Studio() {
             >
               Open in Google Maps →
             </a>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

@@ -1,5 +1,6 @@
 import { siteConfig } from '../../data/siteConfig'
 import { Button } from '../ui/Button'
+import { Reveal } from '../ui/Reveal'
 import { SectionHeading } from '../ui/SectionHeading'
 
 export function About() {
@@ -7,20 +8,21 @@ export function About() {
     <section className="py-24 lg:py-32" id="about">
       <div className="container-page">
         <div className="grid items-center gap-16 lg:grid-cols-2">
-          {/* Portrait of Sandra (public/SJF_Hero.jpg) */}
-          <div
-            className="relative aspect-[4/5] border border-white/10 bg-graphite bg-cover bg-center"
-            style={{ backgroundImage: 'url(/SJF_Hero.jpg)' }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-t from-obsidian/85 via-obsidian/20 to-transparent" />
-            <span className="pointer-events-none absolute inset-4 border border-brand/25" />
-            <div className="absolute inset-x-0 bottom-0 p-8">
-              <p className="font-display text-3xl text-ivory">{siteConfig.owner}</p>
-              <p className="eyebrow mt-3">Founder · Trainer &amp; Chef</p>
+          <Reveal>
+            <div
+              className="relative aspect-[4/5] border border-white/10 bg-graphite bg-cover bg-center"
+              style={{ backgroundImage: 'url(/SJF_Hero.jpg)' }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-t from-obsidian/85 via-obsidian/20 to-transparent" />
+              <span className="pointer-events-none absolute inset-4 border border-brand/25" />
+              <div className="absolute inset-x-0 bottom-0 p-8">
+                <p className="font-display text-3xl text-ivory">{siteConfig.owner}</p>
+                <p className="eyebrow mt-3">Founder · Trainer &amp; Chef</p>
+              </div>
             </div>
-          </div>
+          </Reveal>
 
-          <div>
+          <Reveal delay={120}>
             <SectionHeading
               eyebrow="The Founder"
               title="Meet Sandra Furney"
@@ -58,7 +60,7 @@ export function About() {
             <Button to="/contact" variant="outline" className="mt-10">
               Start a Conversation
             </Button>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

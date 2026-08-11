@@ -1,6 +1,7 @@
 import { Quote } from 'lucide-react'
 import { testimonials } from '../../data/testimonials'
 import { Button } from '../ui/Button'
+import { Reveal } from '../ui/Reveal'
 import { SectionHeading } from '../ui/SectionHeading'
 
 export function TestimonialsPreview() {
@@ -9,11 +10,18 @@ export function TestimonialsPreview() {
   return (
     <section className="bg-onyx py-24 lg:py-32">
       <div className="container-page">
-        <SectionHeading eyebrow="Testimonials" title="What clients say" align="center" />
+        <Reveal>
+          <SectionHeading eyebrow="Testimonials" title="What clients say" align="center" />
+        </Reveal>
 
         <div className="grid gap-px border border-white/10 bg-white/10 sm:grid-cols-2">
-          {featured.map((testimonial) => (
-            <figure key={testimonial.name} className="flex flex-col bg-obsidian p-9">
+          {featured.map((testimonial, index) => (
+            <Reveal
+              key={testimonial.name}
+              as="figure"
+              delay={index * 100}
+              className="flex flex-col bg-obsidian p-9"
+            >
               <Quote className="h-6 w-6 text-brand" aria-hidden="true" />
               <blockquote className="mt-6 flex-1 text-lg leading-relaxed text-ivory">
                 {testimonial.quote}
@@ -24,15 +32,15 @@ export function TestimonialsPreview() {
                   {testimonial.detail}
                 </p>
               </figcaption>
-            </figure>
+            </Reveal>
           ))}
         </div>
 
-        <div className="mt-14 text-center">
+        <Reveal className="mt-14 text-center" delay={120}>
           <Button to="/testimonials" variant="outline">
             Read More Testimonials
           </Button>
-        </div>
+        </Reveal>
       </div>
     </section>
   )
