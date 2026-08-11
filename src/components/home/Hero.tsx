@@ -6,7 +6,7 @@ export function Hero() {
   return (
     <section className="relative flex min-h-[92vh] w-full flex-col overflow-hidden bg-obsidian">
       {/* Warm fallback tone shown before/behind the video */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_72%_18%,rgba(251,46,1,0.14),transparent_55%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_72%_18%,rgba(201,47,18,0.10),transparent_55%)]" />
 
       {/*
         Full-bleed landing video.
@@ -31,13 +31,13 @@ export function Hero() {
       <div className="container-page relative flex flex-1 flex-col justify-center py-28">
         <div className="max-w-3xl">
           <div className="mb-7 flex items-center gap-3">
-            <span className="h-px w-10 bg-brand/70" />
+            <span className="h-px w-10 bg-brand/45" />
             <span className="eyebrow">Private Personal Training · Portlaoise</span>
           </div>
 
           <h1 className="font-display text-5xl font-bold leading-[1.02] tracking-tight text-ivory sm:text-6xl lg:text-7xl">
             Your strongest self,
-            <span className="block text-brand">in private.</span>
+            <span className="block text-brand-dark">in private.</span>
           </h1>
 
           <p className="mt-8 max-w-xl text-lg leading-relaxed text-ash">

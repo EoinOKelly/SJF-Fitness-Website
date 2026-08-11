@@ -4,7 +4,7 @@
 
 **THESIS.** SJF is a private atelier for the body: high-end, invitation-only coaching, not a gym. The page refuses the fitness-category defaults (neon energy, stock barbells, hype, loud gradients) and reads clean, confident and corporate.
 
-**OWN-WORLD.** Obsidian black canvas (`#0a0a0b`) under low warm light. Red hairlines and small, wide-tracked uppercase labels. A confident corporate grotesque (Archivo) for headlines, set against a clean humanist sans (IBM Plex Sans) for everything functional. Sharp corners, 1px hairline rules, generous negative space. Red appears as line, label and single CTA, never as a fill flood.
+**OWN-WORLD.** Warm obsidian canvas (`#0e0c0c`) under low light — blacks carry a tiny red undertone so the brand red sits with the ground, not against it. Deeper red for labels and large text; logo red for CTAs and emphasis. A confident corporate grotesque (Archivo) for headlines, set against a clean humanist sans (IBM Plex Sans) for everything functional. Sharp corners, 1px hairline rules, generous negative space. Red appears as line, label and single CTA, never as a fill flood.
 
 **STORY.** Visitor lands in a cinematic, hushed, premium world, understands this is exclusive private 1:1 training, believes it is high quality and bespoke, then books a session or contacts Sandra.
 
@@ -15,15 +15,15 @@
 ## Tokens
 
 Colors (Tailwind v4 `@theme`, so `bg-obsidian`, `text-brand`, etc. exist):
-- `obsidian #0a0a0b`, page ground
-- `onyx #111114`, raised surface / alt sections
-- `graphite #17171b`, cards, inputs
-- `brand #fb2e01`, primary accent (SJF logo red: line, labels, CTA)
-- `brand-light #ff6a45`, highlight / hover
-- `brand-dark #c41f00`, deeper accent / hover-on-fill
-- `ivory #f4f1ea`, primary text (warm off-white, never pure #fff)
-- `ash #a7a199`, secondary text
-- `ash-dim #8b857b`, tertiary / meta
+- `obsidian #0e0c0c`, page ground (warm black)
+- `onyx #161313`, raised surface / alt sections
+- `graphite #1d1919`, cards, inputs
+- `brand #fb2e01`, logo red (CTA hover / emphasis)
+- `brand-light #ff5c3a`, soft highlight
+- `brand-dark #c92f12`, labels, large accent text, primary CTA fill
+- `ivory #f3efe8`, primary text (warm off-white, never pure #fff)
+- `ash #a8a19a`, secondary text
+- `ash-dim #8a837c`, tertiary / meta
 
 Type:
 - Display: **Archivo** (corporate grotesque), headings, brand moments.

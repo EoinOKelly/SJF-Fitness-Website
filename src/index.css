@@ -4,15 +4,17 @@
   --font-sans: 'IBM Plex Sans', system-ui, sans-serif;
   --font-display: 'Archivo', 'IBM Plex Sans', system-ui, sans-serif;
 
-  --color-obsidian: #0a0a0b;
-  --color-onyx: #111114;
-  --color-graphite: #17171b;
+  /* Warm blacks (tiny red undertone) so the brand red sits with the ground, not against it */
+  --color-obsidian: #0e0c0c;
+  --color-onyx: #161313;
+  --color-graphite: #1d1919;
+  /* Logo red kept; dark/light are softened for UI so large fills feel less neon */
   --color-brand: #fb2e01;
-  --color-brand-light: #ff6a45;
-  --color-brand-dark: #c41f00;
-  --color-ivory: #f4f1ea;
-  --color-ash: #a7a199;
-  --color-ash-dim: #8b857b;
+  --color-brand-light: #ff5c3a;
+  --color-brand-dark: #c92f12;
+  --color-ivory: #f3efe8;
+  --color-ash: #a8a19a;
+  --color-ash-dim: #8a837c;
 }
 
 @layer base {
@@ -43,7 +45,7 @@
 
   /* Small wide-tracked label used sparingly as a system kicker */
   .eyebrow {
-    @apply text-[0.7rem] font-semibold uppercase tracking-[0.28em] text-brand;
+    @apply text-[0.7rem] font-semibold uppercase tracking-[0.28em] text-brand-dark;
   }
 }
 

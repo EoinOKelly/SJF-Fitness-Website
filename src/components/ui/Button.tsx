@@ -6,12 +6,12 @@ type Size = 'sm' | 'md' | 'lg'
 
 const variantClasses: Record<Variant, string> = {
   primary:
-    'bg-brand text-obsidian hover:bg-brand-light',
+    'bg-brand-dark text-ivory hover:bg-brand',
   secondary:
-    'border border-white/15 bg-transparent text-ivory hover:border-brand hover:text-brand',
+    'border border-white/15 bg-transparent text-ivory hover:border-brand/70 hover:text-brand-light',
   outline:
-    'border border-brand/50 text-ivory hover:bg-brand hover:text-obsidian',
-  ghost: 'text-ash hover:text-brand',
+    'border border-brand/40 text-ivory hover:border-brand hover:bg-brand-dark/90 hover:text-ivory',
+  ghost: 'text-ash hover:text-brand-light',
 }
 
 const sizeClasses: Record<Size, string> = {
