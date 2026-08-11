@@ -8,7 +8,7 @@ Modern React website for [SJF Fitness Portlaoise](https://sjffitnessportlaoise.c
 - Multi-step booking wizard (service, date, time, details, review)
 - Client testimonials section
 - Contact form with map embed
-- Formspree integration for booking and contact submissions
+- AOK Emails backend for booking and contact submissions (via Render)
 
 ## Tech Stack
 
@@ -23,20 +23,16 @@ Modern React website for [SJF Fitness Portlaoise](https://sjffitnessportlaoise.c
 
 ```bash
 npm install
-cp .env.example .env   # then add your Formspree form IDs
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173).
+Open [http://localhost:5173](http://localhost:5173). Forms submit to the shared AOK Emails API on Render by default.
 
 ## Environment Variables
 
 | Variable | Description |
 |----------|-------------|
-| `VITE_FORMSPREE_BOOKING_ID` | Formspree form ID for booking requests |
-| `VITE_FORMSPREE_CONTACT_ID` | Formspree form ID for contact messages |
-
-Without these set, forms show a fallback message directing users to call or email Sandra directly.
+| `VITE_CONTACT_API_URL` | Optional. Defaults to `https://aok-website.onrender.com/api/contact`. Set to `http://localhost:5000/api/contact` to test against a local backend. |
 
 ## Scripts
 

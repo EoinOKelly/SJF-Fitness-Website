@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { CheckCircle2, Loader2 } from 'lucide-react'
 import { contactFormSchema, type ContactFormData } from '../../lib/bookingValidation'
-import { submitToFormspree } from '../../lib/formSubmit'
+import { submitToContactApi } from '../../lib/formSubmit'
 import { Button } from '../ui/Button'
 import { Card } from '../ui/Card'
 
@@ -24,12 +24,11 @@ export function ContactForm() {
     setSubmitting(true)
     setResult(null)
 
-    const response = await submitToFormspree(import.meta.env.VITE_FORMSPREE_CONTACT_ID, {
-      _subject: 'New contact form message',
+    const response = await submitToContactApi({
       name: data.name,
-      phone: data.phone,
       email: data.email,
-      message: data.message,
+      subject: 'Contact form message',
+      message: `Phone: ${data.phone}\n\n${data.message}`,
     })
 
     setSubmitting(false)

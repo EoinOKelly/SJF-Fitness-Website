@@ -5,8 +5,7 @@ import { siteConfig } from '../../data/siteConfig'
 import type { BookingDetails } from '../../lib/bookingValidation'
 import {
   formatBookingDate,
-  formatBookingDateISO,
-  submitToFormspree,
+  submitBookingRequest,
 } from '../../lib/formSubmit'
 import { Button } from '../ui/Button'
 import { Card } from '../ui/Card'
@@ -67,16 +66,14 @@ export function BookingWizard() {
     setSubmitting(true)
     setError('')
 
-    const result = await submitToFormspree(import.meta.env.VITE_FORMSPREE_BOOKING_ID, {
-      _subject: `New booking request: ${service.title}`,
+    const result = await submitBookingRequest({
       service: service.title,
-      date: formatBookingDateISO(date),
-      dateFormatted: formatBookingDate(date),
+      date: formatBookingDate(date),
       time,
       name: details.name,
       phone: details.phone,
       email: details.email,
-      message: details.message ?? '',
+      message: details.message,
     })
 
     setSubmitting(false)

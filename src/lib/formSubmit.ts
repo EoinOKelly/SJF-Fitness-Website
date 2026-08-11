@@ -3,36 +3,42 @@ export interface FormSubmitResult {
   message: string
 }
 
-export async function submitToFormspree(
-  formId: string | undefined,
-  data: Record<string, string>,
-): Promise<FormSubmitResult> {
-  if (!formId) {
-    return {
-      ok: false,
-      message:
-        'Form submission is not configured yet. Please call or email Sandra directly to book.',
-    }
-  }
+const DEFAULT_CONTACT_API_URL = 'https://aok-website.onrender.com/api/contact'
 
+export function getContactApiUrl(): string {
+  return import.meta.env.VITE_CONTACT_API_URL || DEFAULT_CONTACT_API_URL
+}
+
+export interface ContactApiPayload {
+  name: string
+  email: string
+  subject: string
+  message: string
+  site?: string
+}
+
+export async function submitToContactApi(
+  payload: ContactApiPayload,
+): Promise<FormSubmitResult> {
   try {
-    const response = await fetch(`https://formspree.io/f/${formId}`, {
+    const response = await fetch(getContactApiUrl(), {
       method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        site: 'sjf',
+        ...payload,
+      }),
     })
 
+    const body = (await response.json()) as { message?: string }
+
     if (response.ok) {
-      return { ok: true, message: 'Your message has been sent successfully.' }
+      return { ok: true, message: body.message ?? 'Your message has been sent successfully.' }
     }
 
-    const body = (await response.json()) as { error?: string }
     return {
       ok: false,
-      message: body.error ?? 'Something went wrong. Please try again or contact Sandra directly.',
+      message: body.message ?? 'Something went wrong. Please try again or contact Sandra directly.',
     }
   } catch {
     return {
@@ -40,6 +46,56 @@ export async function submitToFormspree(
       message: 'Unable to send your message. Please try again or contact Sandra directly.',
     }
   }
+}
+
+export interface BookingSubmission {
+  service: string
+  price?: string
+  date: string
+  time: string
+  name: string
+  phone: string
+  email: string
+  message?: string
+}
+
+export function formatBookingMessage(booking: BookingSubmission): string {
+  const lines = [
+    'NEW BOOKING REQUEST',
+    '',
+    `Service: ${booking.service}`,
+  ]
+
+  if (booking.price) {
+    lines.push(`Price: ${booking.price}`)
+  }
+
+  lines.push(
+    `Date: ${booking.date}`,
+    `Time: ${booking.time}`,
+    '',
+    'Contact details:',
+    `Name: ${booking.name}`,
+    `Phone: ${booking.phone}`,
+    `Email: ${booking.email}`,
+  )
+
+  if (booking.message?.trim()) {
+    lines.push('', 'Additional message:', booking.message.trim())
+  }
+
+  return lines.join('\n')
+}
+
+export async function submitBookingRequest(
+  booking: BookingSubmission,
+): Promise<FormSubmitResult> {
+  return submitToContactApi({
+    name: booking.name,
+    email: booking.email,
+    subject: `Booking request: ${booking.service}`,
+    message: formatBookingMessage(booking),
+  })
 }
 
 export function formatBookingDate(date: Date): string {
