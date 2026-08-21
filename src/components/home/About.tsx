@@ -10,7 +10,7 @@ export function About() {
         <div className="grid items-center gap-16 lg:grid-cols-2">
           <Reveal>
             <div
-              className="relative aspect-[4/5] border border-white/10 bg-graphite bg-cover bg-center"
+              className="relative aspect-[4/5] border-x border-b border-white/10 bg-graphite bg-cover bg-center"
               style={{ backgroundImage: 'url(/SJF_Hero.jpg)' }}
             >
               <div className="absolute inset-0 bg-gradient-to-t from-obsidian/85 via-obsidian/20 to-transparent" />
