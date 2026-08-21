@@ -26,6 +26,15 @@
     @apply bg-obsidian font-sans text-ivory antialiased;
   }
 
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+
   h1,
   h2,
   h3 {
@@ -35,6 +44,13 @@
   ::selection {
     background-color: var(--color-brand);
     color: var(--color-obsidian);
+  }
+}
+
+@supports (content-visibility: auto) {
+  main > section:not(:first-child) {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 800px;
   }
 }
 

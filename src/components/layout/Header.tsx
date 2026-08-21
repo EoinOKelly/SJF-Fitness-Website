@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { Menu, Phone, X } from 'lucide-react'
 import { siteConfig } from '../../data/siteConfig'
@@ -17,6 +17,21 @@ export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const location = useLocation()
   const navigate = useNavigate()
+
+  useEffect(() => {
+    if (!mobileOpen) return
+
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setMobileOpen(false)
+    }
+    document.addEventListener('keydown', handleEscape)
+    document.body.style.overflow = 'hidden'
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape)
+      document.body.style.overflow = ''
+    }
+  }, [mobileOpen])
 
   function handleNavClick(
     event: React.MouseEvent<HTMLAnchorElement>,
@@ -80,7 +95,7 @@ export function Header() {
           </Button>
           <button
             type="button"
-            className="p-2 text-ivory transition-opacity hover:opacity-70 md:hidden"
+            className="-mr-2 flex min-h-11 min-w-11 items-center justify-center text-ivory transition-opacity hover:opacity-70 md:hidden"
             onClick={() => setMobileOpen((open) => !open)}
             aria-expanded={mobileOpen}
             aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
@@ -92,7 +107,7 @@ export function Header() {
 
       {mobileOpen && (
         <nav
-          className="border-t border-white/10 bg-obsidian px-4 py-6 sm:px-6 md:hidden"
+          className="max-h-[calc(100dvh-5rem)] overflow-y-auto border-t border-white/10 bg-obsidian px-5 py-7 sm:px-6 md:hidden"
           aria-label="Mobile navigation"
         >
           <div className="flex flex-col gap-5">

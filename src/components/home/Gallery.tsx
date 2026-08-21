@@ -29,7 +29,7 @@ export function Gallery() {
                 loading="lazy"
                 className="h-full min-h-[220px] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
               />
-              <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-obsidian/80 to-transparent p-4 pt-12 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-obsidian/80 to-transparent p-4 pt-12 opacity-100 transition-opacity duration-300 sm:opacity-0 sm:group-hover:opacity-100 sm:group-focus-within:opacity-100">
                 <span className="text-[0.66rem] uppercase tracking-[0.18em] text-ivory/90">
                   {image.alt}
                 </span>

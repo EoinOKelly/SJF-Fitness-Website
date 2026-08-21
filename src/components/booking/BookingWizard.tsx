@@ -112,7 +112,7 @@ export function BookingWizard() {
 
   return (
     <div>
-      <div className="mb-10 flex items-center justify-center gap-2">
+      <div className="mb-8 flex items-center justify-center gap-1 overflow-hidden sm:mb-10 sm:gap-2" aria-label={`Booking progress: step ${step + 1} of ${STEPS.length}, ${STEPS[step]}`}>
         {STEPS.map((label, index) => (
           <div key={label} className="flex items-center gap-2">
             <div
@@ -133,7 +133,7 @@ export function BookingWizard() {
             </span>
             {index < STEPS.length - 1 && (
               <div
-                className={`mx-1 h-px w-6 sm:w-10 ${index < step ? 'bg-brand' : 'bg-white/15'}`}
+                className={`h-px w-3 min-[380px]:w-5 sm:mx-1 sm:w-10 ${index < step ? 'bg-brand' : 'bg-white/15'}`}
               />
             )}
           </div>
@@ -218,7 +218,7 @@ export function BookingWizard() {
           </>
         )}
 
-        <div className="mt-8 flex items-center justify-between gap-4">
+        <div className="mt-8 flex items-center justify-between gap-2 sm:gap-4">
           <Button
             type="button"
             variant="ghost"
@@ -245,7 +245,7 @@ export function BookingWizard() {
           )}
 
           {step === 4 && (
-            <Button type="button" onClick={handleSubmit} disabled={submitting}>
+            <Button type="button" onClick={handleSubmit} disabled={submitting} className="px-4 sm:px-7">
               {submitting ? (
                 <>
                   <Loader2 className="h-4 w-4 animate-spin" />

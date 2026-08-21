@@ -17,7 +17,7 @@ export function SectionHeading({
 
   return (
     <div
-      className={`mb-14 max-w-2xl ${isCenter ? 'mx-auto text-center' : 'text-left'}`}
+      className={`mb-10 max-w-2xl sm:mb-14 ${isCenter ? 'mx-auto text-center' : 'text-left'}`}
       id={id}
     >
       {eyebrow && (
@@ -28,12 +28,12 @@ export function SectionHeading({
           <span className="eyebrow">{eyebrow}</span>
         </div>
       )}
-      <h2 className="font-display text-4xl font-semibold leading-[1.06] tracking-tight text-ivory sm:text-5xl">
+      <h2 className="font-display text-3xl font-semibold leading-[1.06] tracking-tight text-ivory sm:text-5xl">
         {title}
       </h2>
       {subtitle && (
         <p
-          className={`mt-6 text-lg leading-relaxed text-ash ${isCenter ? 'mx-auto' : ''}`}
+          className={`mt-5 text-base leading-relaxed text-ash sm:mt-6 sm:text-lg ${isCenter ? 'mx-auto' : ''}`}
         >
           {subtitle}
         </p>
