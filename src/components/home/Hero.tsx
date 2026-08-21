@@ -94,11 +94,11 @@ export function Hero() {
 
       {/* Discipline strip */}
       <div className="hero-enter-strip relative border-t border-white/10 bg-obsidian/50 backdrop-blur-sm">
-        <div className="container-page flex flex-wrap items-center gap-x-5 gap-y-2 py-4">
+        <div className="container-page flex flex-wrap items-center gap-x-5 gap-y-2 py-4 lg:flex-nowrap lg:justify-between lg:gap-x-3">
           {siteConfig.highlights.map((item, index) => (
-            <span key={item} className="flex items-center gap-5">
+            <span key={item} className="flex items-center gap-5 lg:gap-3">
               {index > 0 && <span className="h-1 w-1 rotate-45 bg-brand/70" />}
-              <span className="text-[0.68rem] uppercase tracking-[0.22em] text-ash">
+              <span className="text-[0.68rem] uppercase tracking-[0.22em] text-ash lg:whitespace-nowrap lg:text-[0.62rem] lg:tracking-[0.14em] xl:text-[0.68rem] xl:tracking-[0.18em]">
                 {item}
               </span>
             </span>

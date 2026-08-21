@@ -5,7 +5,7 @@ import { SectionHeading } from '../ui/SectionHeading'
 
 export function About() {
   return (
-    <section className="py-24 lg:py-32" id="about">
+    <section className="pb-24 pt-16 sm:pt-20 lg:pb-32 lg:pt-24" id="about">
       <div className="container-page">
         <div className="grid items-center gap-16 lg:grid-cols-2">
           <Reveal>
