@@ -63,6 +63,33 @@ export function Footer() {
                 <span>{siteConfig.address.full}</span>
               </li>
             </ul>
+
+            <div className="mt-6 flex items-center gap-4">
+              <a
+                href={siteConfig.socialLinks.instagram}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="SJF Fitness on Instagram"
+                className="text-ash transition-colors hover:text-brand"
+              >
+                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" strokeWidth="2" />
+                  <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="2" />
+                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+                </svg>
+              </a>
+              <a
+                href={siteConfig.socialLinks.facebook}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="SJF Fitness on Facebook"
+                className="text-ash transition-colors hover:text-brand"
+              >
+                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M14 8.5V7c0-.8.5-1 1-1h2V2.2c-.7-.1-1.8-.2-3.1-.2C10.8 2 9 3.8 9 7.2v1.3H6V13h3v9h4.5v-9h3l.5-4.5h-3Z" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
 

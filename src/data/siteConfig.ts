@@ -7,6 +7,10 @@ export const siteConfig = {
   phoneHref: 'tel:+353862523947',
   email: 'sandra@sjffitnessportlaoise.com',
   emailHref: 'mailto:sandra@sjffitnessportlaoise.com',
+  socialLinks: {
+    instagram: 'https://www.instagram.com/sjffitnessportlaoise/?hl=en',
+    facebook: 'https://www.facebook.com/people/SJF-Fitness-Portlaoise/100063640567299/',
+  },
   address: {
     line1: 'The Office Box',
     line2: 'Kealew Business Park',
