@@ -25,10 +25,6 @@ export const galleryImages: GalleryImage[] = [
     className: 'sm:col-span-2',
   },
   {
-    src: '/gallery/04-session.jpg',
-    alt: 'One-to-one coaching session',
-  },
-  {
     src: '/gallery/06-focus.jpg',
     alt: 'Focused strength work with Sandra',
   },
