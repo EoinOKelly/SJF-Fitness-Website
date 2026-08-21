@@ -7,22 +7,19 @@ export function Hero() {
   const [playVideo, setPlayVideo] = useState(false)
 
   useEffect(() => {
-    const wideScreen = window.matchMedia('(min-width: 768px)')
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
     const connection = navigator as Navigator & {
       connection?: { saveData?: boolean }
     }
 
     const updateVideoPreference = () => {
-      setPlayVideo(wideScreen.matches && !reducedMotion.matches && !connection.connection?.saveData)
+      setPlayVideo(!reducedMotion.matches && !connection.connection?.saveData)
     }
 
     updateVideoPreference()
-    wideScreen.addEventListener('change', updateVideoPreference)
     reducedMotion.addEventListener('change', updateVideoPreference)
 
     return () => {
-      wideScreen.removeEventListener('change', updateVideoPreference)
       reducedMotion.removeEventListener('change', updateVideoPreference)
     }
   }, [])
