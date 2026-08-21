@@ -36,13 +36,7 @@ export function Hero() {
         Full-bleed landing video.
         Drop the file in as: public/hero.mp4  (optional still: public/hero-poster.jpg)
       */}
-      <img
-        src="/hero-poster.jpg"
-        alt=""
-        fetchPriority="high"
-        className="absolute inset-0 h-full w-full object-cover opacity-70"
-      />
-      {playVideo && (
+      {playVideo ? (
         <video
           className="absolute inset-0 h-full w-full object-cover opacity-70"
           autoPlay
@@ -55,6 +49,13 @@ export function Hero() {
         >
           <source src="/hero.mp4" type="video/mp4" />
         </video>
+      ) : (
+        <img
+          src="/hero-poster.jpg"
+          alt=""
+          fetchPriority="high"
+          className="absolute inset-0 h-full w-full object-cover opacity-70"
+        />
       )}
 
       {/* Legibility washes */}
