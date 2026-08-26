@@ -39,12 +39,13 @@ export const galleryImages: GalleryImage[] = [
   {
     src: '/gallery/07-strength-training.jpg',
     alt: 'Sandra leading a strength training session',
-    className: 'sm:col-span-2',
-    objectPosition: '50% 30%',
+    className: 'lg:col-span-2 lg:row-span-3',
+    objectPosition: '50% 34%',
   },
   {
     src: '/gallery/08-personal-trainer.jpg',
     alt: 'Sandra Furney, personal trainer at SJF Fitness',
-    objectPosition: '50% 24%',
+    className: 'lg:row-span-3',
+    objectPosition: '50% 28%',
   },
 ]
