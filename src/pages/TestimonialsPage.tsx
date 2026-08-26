@@ -40,8 +40,8 @@ export function TestimonialsPage() {
           </div>
 
           <div className="mt-14 text-center">
-            <Button to="/book" size="lg">
-              Book Your Session
+            <Button to="/contact" size="lg">
+              Contact Us
             </Button>
           </div>
         </div>

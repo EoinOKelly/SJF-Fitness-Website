@@ -38,8 +38,8 @@ export function Services() {
         </div>
 
         <Reveal className="mt-14 text-center" delay={120}>
-          <Button to="/book" size="lg">
-            Book an Appointment
+          <Button to="/contact" size="lg">
+            Contact Us
           </Button>
         </Reveal>
       </div>

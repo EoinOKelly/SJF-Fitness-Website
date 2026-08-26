@@ -78,8 +78,8 @@ export function Hero() {
           </p>
 
           <div className="mt-9 flex flex-col gap-3 sm:mt-11 sm:flex-row sm:flex-wrap sm:gap-4">
-            <Button to="/book" size="lg" className="w-full sm:w-auto">
-              Book Your Session
+            <Button to="/contact" size="lg" className="w-full sm:w-auto">
+              Contact Us
               <ArrowRight className="h-4 w-4" />
             </Button>
             <Button to="/contact" variant="outline" size="lg" className="w-full sm:w-auto">

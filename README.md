@@ -4,11 +4,11 @@ Modern React website for [SJF Fitness Portlaoise](https://sjffitnessportlaoise.c
 
 ## Features
 
-- Responsive marketing site with Home, Book Now, Testimonials, and Contact pages
-- Multi-step booking wizard (service, date, time, details, review)
+- Responsive marketing site with Home, Testimonials, and Contact pages
+- Simple contact form with name, email, subject, and message fields
 - Client testimonials section
 - Contact form with map embed
-- AOK Emails backend for booking and contact submissions (via Render)
+- Same-origin Vercel Function for contact submissions via Resend
 
 ## Tech Stack
 
@@ -26,13 +26,16 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173). Forms submit to the shared AOK Emails API on Render by default.
+Open [http://localhost:5173](http://localhost:5173). In production, forms submit to the same-origin `/api/contact` Vercel Function.
 
 ## Environment Variables
 
 | Variable | Description |
 |----------|-------------|
-| `VITE_CONTACT_API_URL` | Optional. Defaults to `https://aok-website.onrender.com/api/contact`. Set to `http://localhost:5000/api/contact` to test against a local backend. |
+| `RESEND_API_KEY` | Required server-side Resend API key. Do not prefix it with `VITE_`. |
+| `CONTACT_FROM_EMAIL` | Required sender using a domain verified in Resend, e.g. `SJF Fitness <website@sjffitnessportlaoise.com>`. |
+| `CONTACT_TO_EMAIL` | Required inbox that receives website enquiries. |
+| `VITE_CONTACT_API_URL` | Optional frontend override. Defaults to `/api/contact`. |
 
 ## Scripts
 
@@ -53,13 +56,13 @@ Update the Hero and About components to use `<img src="/hero.jpg" ... />` when p
 
 ## Deployment
 
-Build the site and deploy the `dist/` folder to any static host (Netlify, Vercel, GitHub Pages, etc.):
+Deploy the repository as a Vite project on Vercel. Add `RESEND_API_KEY`, `CONTACT_FROM_EMAIL`, and `CONTACT_TO_EMAIL` under Project Settings → Environment Variables for Production and Preview, then redeploy:
 
 ```bash
 npm run build
 ```
 
-Set environment variables in your hosting provider's dashboard.
+The sender domain in `CONTACT_FROM_EMAIL` must be verified in Resend. The visitor's email is applied as the reply-to address, so replying to an enquiry goes directly to them.
 
 ## Content Updates
 

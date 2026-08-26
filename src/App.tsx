@@ -3,7 +3,6 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { Layout } from './components/layout/Layout'
 import { HomePage } from './pages/HomePage'
 
-const BookPage = lazy(() => import('./pages/BookPage').then((module) => ({ default: module.BookPage })))
 const TestimonialsPage = lazy(() =>
   import('./pages/TestimonialsPage').then((module) => ({ default: module.TestimonialsPage })),
 )
@@ -27,7 +26,7 @@ export function App() {
         <Routes>
           <Route element={<Layout />}>
             <Route index element={<HomePage />} />
-            <Route path="book" element={<BookPage />} />
+            <Route path="book" element={<Navigate to="/contact" replace />} />
             <Route path="testimonials" element={<TestimonialsPage />} />
             <Route path="blog" element={<Navigate to="/testimonials" replace />} />
             <Route path="blog/:slug" element={<Navigate to="/testimonials" replace />} />

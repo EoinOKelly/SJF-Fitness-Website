@@ -90,8 +90,8 @@ export function Header() {
             <Phone className="h-3.5 w-3.5" />
             {siteConfig.phone}
           </a>
-          <Button to="/book" size="sm" className="hidden md:inline-flex">
-            Book Now
+          <Button to="/contact" size="sm" className="hidden md:inline-flex">
+            Contact Us
           </Button>
           <button
             type="button"
@@ -129,8 +129,8 @@ export function Header() {
               <Phone className="h-4 w-4" />
               {siteConfig.phone}
             </a>
-            <Button to="/book" className="mt-2 w-full" onClick={() => setMobileOpen(false)}>
-              Book Now
+            <Button to="/contact" className="mt-2 w-full" onClick={() => setMobileOpen(false)}>
+              Contact Us
             </Button>
           </div>
         </nav>

@@ -27,8 +27,9 @@ export function ContactForm() {
     const response = await submitToContactApi({
       name: data.name,
       email: data.email,
-      subject: 'Contact form message',
-      message: `Phone: ${data.phone}\n\n${data.message}`,
+      subject: data.subject,
+      message: data.message,
+      website: data.website,
     })
 
     setSubmitting(false)
@@ -62,6 +63,16 @@ export function ContactForm() {
     <Card>
       <h2 className="mb-7 font-display text-2xl text-ivory">Send a message</h2>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+        <div className="absolute -left-[9999px]" aria-hidden="true">
+          <label htmlFor="contact-website">Website</label>
+          <input
+            id="contact-website"
+            type="text"
+            tabIndex={-1}
+            autoComplete="off"
+            {...register('website')}
+          />
+        </div>
         <div>
           <label htmlFor="contact-name" className="mb-2 block text-[0.68rem] font-medium uppercase tracking-[0.16em] text-ash">
             Full name *
@@ -76,34 +87,31 @@ export function ContactForm() {
           {errors.name && <p className="mt-2 text-sm text-red-300">{errors.name.message}</p>}
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2">
-          <div>
-            <label htmlFor="contact-phone" className="mb-2 block text-[0.68rem] font-medium uppercase tracking-[0.16em] text-ash">
-              Phone *
-            </label>
-            <input
-              id="contact-phone"
-              type="tel"
-              autoComplete="tel"
-              className="w-full border border-white/10 bg-obsidian px-4 py-3 text-ivory placeholder:text-ash-dim transition-colors focus:border-brand focus:outline-none"
-              {...register('phone')}
-            />
-            {errors.phone && <p className="mt-2 text-sm text-red-300">{errors.phone.message}</p>}
-          </div>
+        <div>
+          <label htmlFor="contact-email" className="mb-2 block text-[0.68rem] font-medium uppercase tracking-[0.16em] text-ash">
+            Email *
+          </label>
+          <input
+            id="contact-email"
+            type="email"
+            autoComplete="email"
+            className="w-full border border-white/10 bg-obsidian px-4 py-3 text-ivory placeholder:text-ash-dim transition-colors focus:border-brand focus:outline-none"
+            {...register('email')}
+          />
+          {errors.email && <p className="mt-2 text-sm text-red-300">{errors.email.message}</p>}
+        </div>
 
-          <div>
-            <label htmlFor="contact-email" className="mb-2 block text-[0.68rem] font-medium uppercase tracking-[0.16em] text-ash">
-              Email *
-            </label>
-            <input
-              id="contact-email"
-              type="email"
-              autoComplete="email"
-              className="w-full border border-white/10 bg-obsidian px-4 py-3 text-ivory placeholder:text-ash-dim transition-colors focus:border-brand focus:outline-none"
-              {...register('email')}
-            />
-            {errors.email && <p className="mt-2 text-sm text-red-300">{errors.email.message}</p>}
-          </div>
+        <div>
+          <label htmlFor="contact-subject" className="mb-2 block text-[0.68rem] font-medium uppercase tracking-[0.16em] text-ash">
+            Subject *
+          </label>
+          <input
+            id="contact-subject"
+            type="text"
+            className="w-full border border-white/10 bg-obsidian px-4 py-3 text-ivory placeholder:text-ash-dim transition-colors focus:border-brand focus:outline-none"
+            {...register('subject')}
+          />
+          {errors.subject && <p className="mt-2 text-sm text-red-300">{errors.subject.message}</p>}
         </div>
 
         <div>

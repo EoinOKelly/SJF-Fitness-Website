@@ -3,7 +3,7 @@ export interface FormSubmitResult {
   message: string
 }
 
-const DEFAULT_CONTACT_API_URL = 'https://aok-website.onrender.com/api/contact'
+const DEFAULT_CONTACT_API_URL = '/api/contact'
 
 export function getContactApiUrl(): string {
   return import.meta.env.VITE_CONTACT_API_URL || DEFAULT_CONTACT_API_URL
@@ -14,6 +14,7 @@ export interface ContactApiPayload {
   email: string
   subject: string
   message: string
+  website?: string
   site?: string
 }
 

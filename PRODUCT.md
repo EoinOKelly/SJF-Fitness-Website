@@ -19,7 +19,7 @@ Convince a first-time visitor within seconds that this is a premium, personal, h
 - Address: The Office Box, Kealew Business Park, Portlaoise, R32 K7TX
 - Services: Personal Training · Weight Loss & Nutrition · Weddings & New Mums
 - Prices are not published on the site.
-- Booking: 07:00 to 20:00, 30-min slots, weekends allowed. Formspree backend.
+- Enquiries are sent through a simple contact form with name, email, subject, and message fields.
 
 ## Studio policies
 - No outdoor training.
