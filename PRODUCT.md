@@ -19,7 +19,7 @@ Convince a first-time visitor within seconds that this is a premium, personal, h
 - Address: The Office Box, Kealew Business Park, Portlaoise, R32 K7TX
 - Service: Personal Training & Nutrition Advice, tailored to goals including weight loss, strength, body conditioning, weddings and returning to exercise after having a baby
 - Prices are not published on the site.
-- Enquiries are sent through a simple contact form with name, email, subject, and message fields.
+- Enquiries are sent through a contact form with name, email, phone, service selection, and message fields.
 
 ## Studio policies
 - No outdoor training.

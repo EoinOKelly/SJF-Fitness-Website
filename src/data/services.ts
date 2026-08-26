@@ -8,6 +8,40 @@ export interface Service {
   icon: LucideIcon
 }
 
+export interface ServiceOption {
+  id: string
+  name: string
+  duration: string
+  price: string
+  priceNote?: string
+}
+
+export const serviceOptions: ServiceOption[] = [
+  {
+    id: 'first-consultation',
+    name: 'First Consultation',
+    duration: '1 hour',
+    price: '€40',
+  },
+  {
+    id: 'personal-training',
+    name: 'Personal Training',
+    duration: '1 hour',
+    price: '€40',
+  },
+  {
+    id: 'train-with-a-friend',
+    name: 'Train with a Friend',
+    duration: '1 hour',
+    price: '€30',
+    priceNote: 'per person',
+  },
+]
+
+export function formatServiceOption(option: ServiceOption): string {
+  return `${option.name} — ${option.duration} — ${option.price}${option.priceNote ? ` ${option.priceNote}` : ''}`
+}
+
 export const services: Service[] = [
   {
     id: 'personal-training',

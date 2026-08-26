@@ -5,7 +5,7 @@ Modern React website for [SJF Fitness Portlaoise](https://sjffitnessportlaoise.c
 ## Features
 
 - Responsive marketing site with Home, Testimonials, and Contact pages
-- Simple contact form with name, email, subject, and message fields
+- Contact form with name, email, phone, service selection, and message fields
 - Client testimonials section
 - Contact form with map embed
 - Same-origin Vercel Function for contact submissions via Resend

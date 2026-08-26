@@ -13,7 +13,11 @@ export const bookingDetailsSchema = z.object({
 export const contactFormSchema = z.object({
   name: z.string().min(2, 'Please enter your full name'),
   email: z.string().email('Please enter a valid email address'),
-  subject: z.string().min(2, 'Please enter a subject'),
+  phone: z
+    .string()
+    .min(7, 'Please enter a valid phone number')
+    .regex(/^[\d\s+()-]+$/, 'Please enter a valid phone number'),
+  service: z.string().min(1, 'Please choose a service'),
   message: z.string().min(10, 'Please enter a message of at least 10 characters'),
   website: z.string().optional(),
 })

@@ -12,7 +12,9 @@ export function getContactApiUrl(): string {
 export interface ContactApiPayload {
   name: string
   email: string
-  subject: string
+  subject?: string
+  phone?: string
+  service?: string
   message: string
   website?: string
   site?: string

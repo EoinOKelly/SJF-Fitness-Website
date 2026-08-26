@@ -4,6 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { CheckCircle2, Loader2 } from 'lucide-react'
 import { contactFormSchema, type ContactFormData } from '../../lib/bookingValidation'
 import { submitToContactApi } from '../../lib/formSubmit'
+import { formatServiceOption, serviceOptions } from '../../data/services'
 import { Button } from '../ui/Button'
 import { Card } from '../ui/Card'
 
@@ -27,7 +28,8 @@ export function ContactForm() {
     const response = await submitToContactApi({
       name: data.name,
       email: data.email,
-      subject: data.subject,
+      phone: data.phone,
+      service: data.service,
       message: data.message,
       website: data.website,
     })
@@ -102,16 +104,37 @@ export function ContactForm() {
         </div>
 
         <div>
-          <label htmlFor="contact-subject" className="mb-2 block text-[0.68rem] font-medium uppercase tracking-[0.16em] text-ash">
-            Subject *
+          <label htmlFor="contact-phone" className="mb-2 block text-[0.68rem] font-medium uppercase tracking-[0.16em] text-ash">
+            Phone number *
           </label>
           <input
-            id="contact-subject"
-            type="text"
+            id="contact-phone"
+            type="tel"
+            autoComplete="tel"
             className="w-full border border-white/10 bg-obsidian px-4 py-3 text-ivory placeholder:text-ash-dim transition-colors focus:border-brand focus:outline-none"
-            {...register('subject')}
+            {...register('phone')}
           />
-          {errors.subject && <p className="mt-2 text-sm text-red-300">{errors.subject.message}</p>}
+          {errors.phone && <p className="mt-2 text-sm text-red-300">{errors.phone.message}</p>}
+        </div>
+
+        <div>
+          <label htmlFor="contact-service" className="mb-2 block text-[0.68rem] font-medium uppercase tracking-[0.16em] text-ash">
+            What service would you like? *
+          </label>
+          <select
+            id="contact-service"
+            defaultValue=""
+            className="w-full border border-white/10 bg-obsidian px-4 py-3 text-ivory transition-colors focus:border-brand focus:outline-none"
+            {...register('service')}
+          >
+            <option value="" disabled>Choose a service</option>
+            {serviceOptions.map((option) => (
+              <option key={option.id} value={formatServiceOption(option)}>
+                {formatServiceOption(option)}
+              </option>
+            ))}
+          </select>
+          {errors.service && <p className="mt-2 text-sm text-red-300">{errors.service.message}</p>}
         </div>
 
         <div>
