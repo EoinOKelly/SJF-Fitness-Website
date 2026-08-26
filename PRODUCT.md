@@ -17,7 +17,7 @@ Convince a first-time visitor within seconds that this is a premium, personal, h
 - Phone: 086 2523947 (tel:+353862523947)
 - Email: sandra@sjffitnessportlaoise.com
 - Address: The Office Box, Kealew Business Park, Portlaoise, R32 K7TX
-- Services: Personal Training · Weight Loss & Nutrition · Weddings & New Mums
+- Service: Personal Training & Nutrition Advice, tailored to goals including weight loss, strength, body conditioning, weddings and returning to exercise after having a baby
 - Prices are not published on the site.
 - Enquiries are sent through a simple contact form with name, email, subject, and message fields.
 

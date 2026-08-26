@@ -9,9 +9,9 @@ export function Services() {
       <div className="container-page">
         <Reveal>
           <SectionHeading
-            eyebrow="Services"
-            title="Tailored to every goal"
-            subtitle="Every session is built around you, whether you are training for weight loss, building strength, or preparing for a moment that matters."
+            eyebrow="Personal Coaching"
+            title="One complete service, tailored to you"
+            subtitle="Personal training and practical nutrition advice work together in one plan built around your goals, your lifestyle, and your progress."
             align="center"
           />
         </Reveal>

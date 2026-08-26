@@ -1,5 +1,5 @@
 import type { LucideIcon } from 'lucide-react'
-import { Dumbbell, Heart, UtensilsCrossed } from 'lucide-react'
+import { Dumbbell } from 'lucide-react'
 
 export interface Service {
   id: string
@@ -11,24 +11,10 @@ export interface Service {
 export const services: Service[] = [
   {
     id: 'personal-training',
-    title: 'Personal Training',
+    title: 'Personal Training & Nutrition Advice',
     description:
-      'A programme built entirely around you: weight loss, body conditioning and toning, coached one-to-one in a private Portlaoise studio.',
+      'One complete programme built around you, combining private one-to-one training with practical nutrition and menu advice. Whether your goal is weight loss, strength, body conditioning, preparing for your wedding, or returning to exercise after having a baby, Sandra supports the whole journey with the added real-world knowledge of a trained chef.',
     icon: Dumbbell,
-  },
-  {
-    id: 'weight-loss-nutrition',
-    title: 'Weight Loss & Nutrition Advice',
-    description:
-      'Real, sustainable change with no crash diets and no fads. As a trained chef, Sandra reviews how you eat and builds a menu plan you can actually live with, included as part of your training.',
-    icon: UtensilsCrossed,
-  },
-  {
-    id: 'weddings-new-mums',
-    title: 'Weddings & New Mums',
-    description:
-      'Preparing for your wedding day, or finding your strength again after birth? A discreet, personal plan for the moments that matter, coached privately just for you.',
-    icon: Heart,
   },
 ]
 
