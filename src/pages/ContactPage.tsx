@@ -10,7 +10,7 @@ export function ContactPage() {
       title="Contact"
       description="Contact Sandra Furney at SJF Fitness Portlaoise. Phone, email and studio location."
     >
-      <section className="py-20 lg:py-28">
+      <section className="py-14 sm:py-20 lg:py-28">
         <div className="container-page">
           <SectionHeading
             eyebrow="Contact"
@@ -19,34 +19,34 @@ export function ContactPage() {
             align="center"
           />
 
-          <div className="grid gap-10 lg:grid-cols-2">
-            <div>
+          <div className="grid min-w-0 gap-8 lg:grid-cols-2 lg:gap-10">
+            <div className="min-w-0">
               <ContactForm />
 
-              <div className="mt-8 space-y-5 border border-white/10 bg-graphite p-8">
+              <div className="mt-6 space-y-2 border border-white/10 bg-graphite p-5 sm:mt-8 sm:p-8">
                 <h3 className="eyebrow">Direct contact</h3>
                 <a
                   href={siteConfig.phoneHref}
-                  className="flex items-center gap-3 text-ash transition-colors hover:text-brand"
+                  className="flex min-h-11 items-center gap-3 text-ash transition-colors hover:text-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40"
                 >
                   <Phone className="h-5 w-5 shrink-0 text-brand" />
                   {siteConfig.phone}
                 </a>
                 <a
                   href={siteConfig.emailHref}
-                  className="flex items-center gap-3 text-ash transition-colors hover:text-brand"
+                  className="flex min-h-11 min-w-0 items-center gap-3 text-ash transition-colors hover:text-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40"
                 >
                   <Mail className="h-5 w-5 shrink-0 text-brand" />
-                  {siteConfig.email}
+                  <span className="min-w-0 break-all">{siteConfig.email}</span>
                 </a>
-                <div className="flex items-start gap-3 text-ash">
+                <div className="flex min-h-11 items-start gap-3 py-2 text-ash">
                   <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-brand" />
                   <address className="not-italic">{siteConfig.address.full}</address>
                 </div>
               </div>
             </div>
 
-            <div className="overflow-hidden border border-white/10">
+            <div className="min-w-0 overflow-hidden border border-white/10">
               <iframe
                 title="SJF Fitness location map"
                 src={siteConfig.mapEmbedUrl}

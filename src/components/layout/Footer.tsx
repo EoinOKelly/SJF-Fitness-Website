@@ -70,7 +70,7 @@ export function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="SJF Fitness on Instagram"
-                className="text-ash transition-colors hover:text-brand"
+                className="-m-3 flex h-11 w-11 items-center justify-center text-ash transition-colors hover:text-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40"
               >
                 <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                   <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" strokeWidth="2" />
@@ -83,7 +83,7 @@ export function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="SJF Fitness on Facebook"
-                className="text-ash transition-colors hover:text-brand"
+                className="-m-3 ml-1 flex h-11 w-11 items-center justify-center text-ash transition-colors hover:text-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40"
               >
                 <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <path d="M14 8.5V7c0-.8.5-1 1-1h2V2.2c-.7-.1-1.8-.2-3.1-.2C10.8 2 9 3.8 9 7.2v1.3H6V13h3v9h4.5v-9h3l.5-4.5h-3Z" />

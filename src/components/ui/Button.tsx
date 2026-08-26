@@ -21,7 +21,7 @@ const sizeClasses: Record<Size, string> = {
 }
 
 const baseClasses =
-  'inline-flex items-center justify-center gap-2.5 font-semibold uppercase tracking-[0.2em] transition-all duration-300 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-obsidian disabled:pointer-events-none disabled:opacity-40'
+  'inline-flex min-h-11 cursor-pointer items-center justify-center gap-2.5 font-semibold uppercase tracking-[0.2em] transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-obsidian disabled:pointer-events-none disabled:opacity-40'
 
 interface ButtonBaseProps {
   variant?: Variant

@@ -3,29 +3,48 @@ export interface GalleryImage {
   alt: string
   /** Tailwind grid class for asymmetric layout */
   className?: string
+  /** Keeps the subject framed when a landscape image is cropped into the grid */
+  objectPosition?: string
 }
 
 export const galleryImages: GalleryImage[] = [
   {
-    src: '/gallery/01-sandra.jpg',
-    alt: 'Sandra Furney, personal trainer at SJF Fitness',
-    className: 'sm:col-span-2 sm:row-span-2',
+    src: '/gallery/01-studio.jpg',
+    alt: 'The private SJF Fitness studio and training equipment',
+    className: 'sm:col-span-2 lg:row-span-2',
   },
   {
-    src: '/gallery/03-training.jpg',
-    alt: 'Private training session at SJF Fitness',
+    src: '/gallery/02-colour-weights.jpg',
+    alt: 'Colourful weight plates ready for a strength session',
   },
   {
-    src: '/gallery/05-movement.jpg',
-    alt: 'Movement and conditioning in the studio',
+    src: '/gallery/03-barbell-training.jpg',
+    alt: 'Sandra demonstrating a controlled barbell squat',
+    objectPosition: '50% 36%',
   },
   {
-    src: '/gallery/02-studio.jpg',
-    alt: 'Inside the SJF Fitness private studio',
+    src: '/gallery/04-bike-training.jpg',
+    alt: 'Sandra training on the studio bike',
+    objectPosition: '50% 28%',
+  },
+  {
+    src: '/gallery/05-cable-training.jpg',
+    alt: 'Sandra demonstrating a focused cable exercise',
+    objectPosition: '50% 30%',
+  },
+  {
+    src: '/gallery/06-free-weights.jpg',
+    alt: 'Chrome free weights in the private studio',
+  },
+  {
+    src: '/gallery/07-strength-training.jpg',
+    alt: 'Sandra leading a strength training session',
     className: 'sm:col-span-2',
+    objectPosition: '50% 30%',
   },
   {
-    src: '/gallery/06-focus.jpg',
-    alt: 'Focused strength work with Sandra',
+    src: '/gallery/08-personal-trainer.jpg',
+    alt: 'Sandra Furney, personal trainer at SJF Fitness',
+    objectPosition: '50% 24%',
   },
 ]

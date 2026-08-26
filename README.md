@@ -8,7 +8,7 @@ Modern React website for [SJF Fitness Portlaoise](https://sjffitnessportlaoise.c
 - Contact form with name, email, phone, service selection, and message fields
 - Client testimonials section
 - Contact form with map embed
-- Same-origin Vercel Function for contact submissions via Resend
+- Shared AOK Emails backend on Render for contact submissions
 
 ## Tech Stack
 
@@ -26,16 +26,13 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173). In production, forms submit to the same-origin `/api/contact` Vercel Function.
+Open [http://localhost:5173](http://localhost:5173). Forms submit to the shared AOK Emails API on Render by default.
 
 ## Environment Variables
 
 | Variable | Description |
 |----------|-------------|
-| `RESEND_API_KEY` | Required server-side Resend API key. Do not prefix it with `VITE_`. |
-| `CONTACT_FROM_EMAIL` | Required sender using a domain verified in Resend, e.g. `SJF Fitness <website@sjffitnessportlaoise.com>`. |
-| `CONTACT_TO_EMAIL` | Required inbox that receives website enquiries. |
-| `VITE_CONTACT_API_URL` | Optional frontend override. Defaults to `/api/contact`. |
+| `VITE_CONTACT_API_URL` | Optional frontend override. Defaults to `https://aok-website.onrender.com/api/contact`. |
 
 ## Scripts
 
@@ -56,13 +53,13 @@ Update the Hero and About components to use `<img src="/hero.jpg" ... />` when p
 
 ## Deployment
 
-Deploy the repository as a Vite project on Vercel. Add `RESEND_API_KEY`, `CONTACT_FROM_EMAIL`, and `CONTACT_TO_EMAIL` under Project Settings → Environment Variables for Production and Preview, then redeploy:
+Build the site and deploy it as a Vite project on Vercel:
 
 ```bash
 npm run build
 ```
 
-The sender domain in `CONTACT_FROM_EMAIL` must be verified in Resend. The visitor's email is applied as the reply-to address, so replying to an enquiry goes directly to them.
+The Render backend is responsible for validating submissions, sending the email, and allowing requests from the deployed website through CORS.
 
 ## Content Updates
 
