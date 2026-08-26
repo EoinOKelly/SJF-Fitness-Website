@@ -28,8 +28,8 @@ export function Gallery() {
                 alt={image.alt}
                 loading="lazy"
                 decoding="async"
-                width="1800"
-                height="1200"
+                width={image.width}
+                height={image.height}
                 sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                 style={{ objectPosition: image.objectPosition }}
                 className="h-full w-full object-cover transition duration-700 ease-out group-hover:scale-[1.025] group-hover:saturate-[1.06]"
