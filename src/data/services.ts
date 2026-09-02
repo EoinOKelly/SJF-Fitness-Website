@@ -24,7 +24,7 @@ export const serviceOption: ServiceOption = {
 }
 
 export function formatServiceOption(option: ServiceOption): string {
-  return `${option.name} — ${option.duration} — ${option.price}${option.priceNote ? ` ${option.priceNote}` : ''}`
+  return `${option.name} - ${option.duration} - ${option.price}${option.priceNote ? ` ${option.priceNote}` : ''}`
 }
 
 export const services: Service[] = [
