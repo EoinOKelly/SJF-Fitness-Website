@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { CheckCircle2, ChevronLeft, ChevronRight, Loader2 } from 'lucide-react'
-import { getServiceById } from '../../data/services'
+import { primaryService } from '../../data/services'
 import { siteConfig } from '../../data/siteConfig'
 import type { BookingDetails } from '../../lib/bookingValidation'
 import {
@@ -11,10 +11,9 @@ import { Button } from '../ui/Button'
 import { Card } from '../ui/Card'
 import { DateSelect } from './DateSelect'
 import { DetailsForm } from './DetailsForm'
-import { ServiceSelect } from './ServiceSelect'
 import { TimeSelect } from './TimeSelect'
 
-const STEPS = ['Service', 'Date', 'Time', 'Details', 'Review'] as const
+const STEPS = ['Date', 'Time', 'Details', 'Review'] as const
 
 const emptyDetails: BookingDetails = {
   name: '',
@@ -25,7 +24,6 @@ const emptyDetails: BookingDetails = {
 
 export function BookingWizard() {
   const [step, setStep] = useState(0)
-  const [serviceId, setServiceId] = useState('')
   const [date, setDate] = useState<Date | undefined>()
   const [time, setTime] = useState('')
   const [details, setDetails] = useState<BookingDetails>(emptyDetails)
@@ -33,17 +31,13 @@ export function BookingWizard() {
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState('')
 
-  const service = getServiceById(serviceId)
-
   function canProceed(): boolean {
     switch (step) {
       case 0:
-        return !!serviceId
-      case 1:
         return !!date
-      case 2:
+      case 1:
         return !!time
-      case 3:
+      case 2:
         return false
       default:
         return true
@@ -61,13 +55,13 @@ export function BookingWizard() {
   }
 
   async function handleSubmit() {
-    if (!service || !date || !time) return
+    if (!date || !time) return
 
     setSubmitting(true)
     setError('')
 
     const result = await submitBookingRequest({
-      service: service.title,
+      service: primaryService.title,
       date: formatBookingDate(date),
       time,
       name: details.name,
@@ -143,45 +137,38 @@ export function BookingWizard() {
       <Card className="mx-auto max-w-2xl">
         {step === 0 && (
           <>
-            <h2 className="mb-6 font-display text-2xl text-ivory">Choose a service</h2>
-            <ServiceSelect selectedId={serviceId} onSelect={setServiceId} />
-          </>
-        )}
-
-        {step === 1 && (
-          <>
             <h2 className="mb-6 font-display text-2xl text-ivory">Pick a date</h2>
             <DateSelect selected={date} onSelect={setDate} />
           </>
         )}
 
-        {step === 2 && (
+        {step === 1 && (
           <>
             <h2 className="mb-6 font-display text-2xl text-ivory">Pick a time</h2>
             <TimeSelect selected={time} onSelect={setTime} />
           </>
         )}
 
-        {step === 3 && (
+        {step === 2 && (
           <>
             <h2 className="mb-6 font-display text-2xl text-ivory">Your details</h2>
             <DetailsForm
               defaultValues={details}
               onSubmit={(data) => {
                 setDetails(data)
-                setStep(4)
+                setStep(3)
               }}
             />
           </>
         )}
 
-        {step === 4 && service && date && (
+        {step === 3 && date && (
           <>
             <h2 className="mb-6 font-display text-2xl text-ivory">Review your booking</h2>
             <dl className="space-y-3 text-sm">
               <div className="flex justify-between border-b border-white/10 pb-3">
                 <dt className="text-ash">Service</dt>
-                <dd className="text-ivory">{service.title}</dd>
+                <dd className="text-ivory">{primaryService.title}</dd>
               </div>
               <div className="flex justify-between border-b border-white/10 pb-3">
                 <dt className="text-ash">Date</dt>
@@ -230,21 +217,21 @@ export function BookingWizard() {
             Back
           </Button>
 
-          {step < 3 && (
+          {step < 2 && (
             <Button type="button" onClick={handleNext} disabled={!canProceed()}>
               Next
               <ChevronRight className="h-4 w-4" />
             </Button>
           )}
 
-          {step === 3 && (
+          {step === 2 && (
             <Button type="submit" form="booking-details-form">
               Review
               <ChevronRight className="h-4 w-4" />
             </Button>
           )}
 
-          {step === 4 && (
+          {step === 3 && (
             <Button type="button" onClick={handleSubmit} disabled={submitting} className="px-4 sm:px-7">
               {submitting ? (
                 <>

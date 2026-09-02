@@ -16,27 +16,12 @@ export interface ServiceOption {
   priceNote?: string
 }
 
-export const serviceOptions: ServiceOption[] = [
-  {
-    id: 'first-consultation',
-    name: 'First Consultation',
-    duration: '1 hour',
-    price: '€40',
-  },
-  {
-    id: 'personal-training',
-    name: 'Personal Training',
-    duration: '1 hour',
-    price: '€40',
-  },
-  {
-    id: 'train-with-a-friend',
-    name: 'Train with a Friend',
-    duration: '1 hour',
-    price: '€30',
-    priceNote: 'per person',
-  },
-]
+export const serviceOption: ServiceOption = {
+  id: 'personal-training',
+  name: 'Personal Training',
+  duration: '1 hour',
+  price: '€40',
+}
 
 export function formatServiceOption(option: ServiceOption): string {
   return `${option.name} — ${option.duration} — ${option.price}${option.priceNote ? ` ${option.priceNote}` : ''}`
@@ -52,6 +37,4 @@ export const services: Service[] = [
   },
 ]
 
-export function getServiceById(id: string): Service | undefined {
-  return services.find((s) => s.id === id)
-}
+export const primaryService = services[0]

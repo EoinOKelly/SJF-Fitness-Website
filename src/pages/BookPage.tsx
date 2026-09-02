@@ -13,7 +13,7 @@ export function BookPage() {
           <SectionHeading
             eyebrow="Reserve"
             title="Schedule your session"
-            subtitle="Choose your service, pick a date and time, and Sandra will personally confirm your appointment."
+            subtitle="Pick a date and time for your personal training session, and Sandra will personally confirm your appointment."
             align="center"
           />
           <BookingWizard />
