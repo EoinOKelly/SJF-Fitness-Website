@@ -10,7 +10,7 @@ export function Gallery() {
           <SectionHeading
             eyebrow="Gallery"
             title="Inside the studio"
-            subtitle="A glimpse of private training with Sandra — calm space, focused work, real results."
+            subtitle="A glimpse inside a calm, private space for focused work and real results."
             align="center"
           />
         </Reveal>

@@ -4,7 +4,7 @@
 
 **THESIS.** SJF is a private atelier for the body: high-end, invitation-only coaching, not a gym. The page refuses the fitness-category defaults (neon energy, stock barbells, hype, loud gradients) and reads clean, confident and corporate.
 
-**OWN-WORLD.** Warm obsidian canvas (`#0e0c0c`) under low light — blacks carry a tiny red undertone so the brand red sits with the ground, not against it. Deeper red for labels and large text; logo red for CTAs and emphasis. A confident corporate grotesque (Archivo) for headlines, set against a clean humanist sans (IBM Plex Sans) for everything functional. Sharp corners, 1px hairline rules, generous negative space. Red appears as line, label and single CTA, never as a fill flood.
+**OWN-WORLD.** Warm obsidian canvas (`#0e0c0c`) under low light. Blacks carry a tiny red undertone so the brand red sits with the ground, not against it. Deeper red for labels and large text; logo red for CTAs and emphasis. A confident corporate grotesque (Archivo) for headlines, set against a clean humanist sans (IBM Plex Sans) for everything functional. Sharp corners, 1px hairline rules, generous negative space. Red appears as line, label and single CTA, never as a fill flood.
 
 **STORY.** Visitor lands in a cinematic, hushed, premium world, understands this is exclusive private 1:1 training, believes it is high quality and bespoke, then books a session or contacts Sandra.
 

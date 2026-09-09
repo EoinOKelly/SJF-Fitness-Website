@@ -1,4 +1,4 @@
-import { serviceOptions, services } from '../../data/services'
+import { serviceOption, services } from '../../data/services'
 import { Button } from '../ui/Button'
 import { Reveal } from '../ui/Reveal'
 import { SectionHeading } from '../ui/SectionHeading'
@@ -39,23 +39,15 @@ export function Services() {
 
         <Reveal className="mt-12" delay={100}>
           <div className="border border-white/10 bg-graphite p-6 sm:p-8">
-            <h3 className="font-display text-2xl text-ivory">Sessions & pricing</h3>
-            <div className="mt-6 divide-y divide-white/10 border-y border-white/10">
-              {serviceOptions.map((option) => (
-                <div
-                  key={option.id}
-                  className="flex flex-col gap-1 py-5 sm:flex-row sm:items-center sm:justify-between sm:gap-6"
-                >
-                  <div>
-                    <p className="font-medium text-ivory">{option.name}</p>
-                    <p className="mt-1 text-sm text-ash">{option.duration}</p>
-                  </div>
-                  <p className="text-lg font-medium text-brand">
-                    {option.price}
-                    {option.priceNote && <span className="ml-1 text-sm font-normal text-ash">{option.priceNote}</span>}
-                  </p>
+            <h3 className="font-display text-2xl text-ivory">Session pricing</h3>
+            <div className="mt-6 border-y border-white/10">
+              <div className="flex flex-col gap-1 py-5 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
+                <div>
+                  <p className="font-medium text-ivory">{serviceOption.name}</p>
+                  <p className="mt-1 text-sm text-ash">{serviceOption.duration}</p>
                 </div>
-              ))}
+                <p className="text-lg font-medium text-brand">{serviceOption.price}</p>
+              </div>
             </div>
           </div>
         </Reveal>

@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { CheckCircle2, ChevronDown, Loader2, Send } from 'lucide-react'
+import { CheckCircle2, Loader2, Send } from 'lucide-react'
 import { contactFormSchema, type ContactFormData } from '../../lib/bookingValidation'
 import { submitToContactApi } from '../../lib/formSubmit'
-import { formatServiceOption, serviceOptions } from '../../data/services'
+import { formatServiceOption, serviceOption } from '../../data/services'
 import { Button } from '../ui/Button'
 import { Card } from '../ui/Card'
 
@@ -16,6 +16,7 @@ export function ContactForm() {
   const [result, setResult] = useState<{ ok: boolean; message: string } | null>(null)
   const { register, handleSubmit, reset, formState: { errors } } = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
+    defaultValues: { service: formatServiceOption(serviceOption) },
   })
 
   async function onSubmit(data: ContactFormData) {
@@ -52,6 +53,7 @@ export function ContactForm() {
       </div>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-5" noValidate>
+        <input type="hidden" {...register('service')} />
         <div className="pointer-events-none fixed left-0 top-0 h-px w-px overflow-hidden opacity-0" aria-hidden="true">
           <label htmlFor="contact-website">Website</label>
           <input id="contact-website" type="text" tabIndex={-1} autoComplete="off" {...register('website')} />
@@ -73,22 +75,6 @@ export function ContactForm() {
           <label htmlFor="contact-phone" className="mb-2 block text-[0.68rem] font-medium uppercase tracking-[0.16em] text-ash">Phone number *</label>
           <input id="contact-phone" type="tel" inputMode="tel" autoComplete="tel" className={fieldClass} aria-invalid={errors.phone ? 'true' : 'false'} {...register('phone')} />
           {errors.phone && <p className="mt-2 text-sm text-red-300">{errors.phone.message}</p>}
-        </div>
-
-        <div>
-          <label htmlFor="contact-service" className="mb-2 block text-[0.68rem] font-medium uppercase tracking-[0.16em] text-ash">What service would you like? *</label>
-          <div className="group relative">
-            <select id="contact-service" defaultValue="" className={`${fieldClass} cursor-pointer appearance-none truncate pr-12`} aria-invalid={errors.service ? 'true' : 'false'} {...register('service')}>
-              <option value="" disabled>Choose a service</option>
-              {serviceOptions.map((option) => (
-                <option key={option.id} value={formatServiceOption(option)}>{formatServiceOption(option)}</option>
-              ))}
-            </select>
-            <span className="pointer-events-none absolute inset-y-px right-px flex w-11 items-center justify-center border-l border-white/10 bg-onyx text-brand transition-colors group-focus-within:bg-brand/10">
-              <ChevronDown className="h-4 w-4" aria-hidden="true" />
-            </span>
-          </div>
-          {errors.service && <p className="mt-2 text-sm text-red-300">{errors.service.message}</p>}
         </div>
 
         <div>

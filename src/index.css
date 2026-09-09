@@ -86,7 +86,7 @@
   }
 }
 
-/* Quiet scroll / entrance reveals — only when motion is allowed */
+/* Quiet scroll / entrance reveals, only when motion is allowed */
 @media (prefers-reduced-motion: no-preference) {
   .reveal {
     opacity: 0;
@@ -110,7 +110,7 @@
     border-color: color-mix(in srgb, var(--color-brand) 38%, transparent);
   }
 
-  /* Hero focal entrance — one authored sequence */
+  /* Hero focal entrance, one authored sequence */
   .hero-enter > * {
     opacity: 0;
     transform: translateY(1.25rem);

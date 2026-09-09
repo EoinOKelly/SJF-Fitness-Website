@@ -45,10 +45,6 @@ try {
     }
 
     await page.goto(`${baseUrl}/contact`, { waitUntil: 'domcontentloaded', timeout: 10_000 })
-    const select = page.getByLabel('What service would you like? *')
-    await select.selectOption({ index: 1 })
-    assert.notEqual(await select.inputValue(), '', `Service select did not accept input at ${width}px`)
-
     const submit = page.getByRole('button', { name: 'Send Message' })
     assert.equal(await submit.isVisible(), true, `Submit button is not visible at ${width}px`)
     assert.equal(await submit.isEnabled(), true, `Submit button is not enabled at ${width}px`)

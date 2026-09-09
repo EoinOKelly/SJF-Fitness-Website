@@ -17,7 +17,7 @@ export const contactFormSchema = z.object({
     .string()
     .min(7, 'Please enter a valid phone number')
     .regex(/^[\d\s+()-]+$/, 'Please enter a valid phone number'),
-  service: z.string().min(1, 'Please choose a service'),
+  service: z.string().min(1, 'Service is required'),
   message: z.string().min(10, 'Please enter a message of at least 10 characters'),
   website: z.string().optional(),
 })
