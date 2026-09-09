@@ -46,6 +46,7 @@ try {
 
     await page.goto(`${baseUrl}/contact`, { waitUntil: 'domcontentloaded', timeout: 10_000 })
     const submit = page.getByRole('button', { name: 'Send Message' })
+    await submit.waitFor({ state: 'visible' })
     assert.equal(await submit.isVisible(), true, `Submit button is not visible at ${width}px`)
     assert.equal(await submit.isEnabled(), true, `Submit button is not enabled at ${width}px`)
 
