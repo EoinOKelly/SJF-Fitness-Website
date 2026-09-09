@@ -1,0 +1,24 @@
+{
+  "redirects": [
+    {
+      "source": "/benefits-of-exercise/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/cardio-weights/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/home/filename_01/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/:path*",
+      "destination": "/testimonials",
+      "permanent": true
+    }
+  ]
+}

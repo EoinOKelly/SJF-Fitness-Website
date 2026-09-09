@@ -8,6 +8,7 @@ export function TestimonialsPage() {
   return (
     <PageMeta
       title="Testimonials"
+      path="/testimonials"
       description="What clients say about training with Sandra Furney at SJF Fitness Portlaoise: personal one-to-one coaching, nutrition and real cooking knowledge."
     >
       <section className="py-20 lg:py-28">

@@ -8,6 +8,7 @@ export function ContactPage() {
   return (
     <PageMeta
       title="Contact"
+      path="/contact"
       description="Contact Sandra Furney at SJF Fitness Portlaoise. Phone, email and studio location."
     >
       <section className="py-14 sm:py-20 lg:py-28">

@@ -6,6 +6,7 @@ export function BookPage() {
   return (
     <PageMeta
       title="Book Now"
+      path="/contact"
       description="Book a personal training session with Sandra Furney at SJF Fitness Portlaoise."
     >
       <section className="py-20 lg:py-28">
