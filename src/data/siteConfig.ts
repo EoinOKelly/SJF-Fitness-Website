@@ -5,8 +5,8 @@ export const siteConfig = {
   subtitle: 'Private one-to-one personal training with Sandra Furney, in a discreet Portlaoise studio.',
   phone: '086 2523947',
   phoneHref: 'tel:+353862523947',
-  email: 'sandra@sjffitnessportlaoise.com',
-  emailHref: 'mailto:sandra@sjffitnessportlaoise.com',
+  email: 'sandrafurney@hotmail.com',
+  emailHref: 'mailto:sandrafurney@hotmail.com',
   socialLinks: {
     instagram: 'https://www.instagram.com/sjffitnessportlaoise/?hl=en',
     facebook: 'https://www.facebook.com/people/SJF-Fitness-Portlaoise/100063640567299/',

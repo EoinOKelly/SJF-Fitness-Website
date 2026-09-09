@@ -15,7 +15,7 @@ Convince a first-time visitor within seconds that this is a premium, personal, h
 ## Fixed product truth (never invent or alter)
 - Owner: Sandra Furney · Female personal trainer, nutrition expert and trained chef · Private premises
 - Phone: 086 2523947 (tel:+353862523947)
-- Email: sandra@sjffitnessportlaoise.com
+- Email: sandrafurney@hotmail.com
 - Address: The Office Box, Kealew Business Park, Portlaoise, R32 K7TX
 - Service: Personal Training & Nutrition Advice, tailored to goals including weight loss, strength, body conditioning, weddings and returning to exercise after having a baby
 - Prices are not published on the site.
