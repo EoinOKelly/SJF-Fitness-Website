@@ -96,6 +96,18 @@ export function Footer() {
         <div className="mt-14 border-t border-white/10 pt-8 text-xs tracking-wide text-ash-dim">
           {siteConfig.copyright}
         </div>
+
+        <div className="mt-6 text-center text-[0.65rem] tracking-wide text-ash-dim/70">
+          Developed by{' '}
+          <a
+            href="https://aokcommunications.ie"
+            target="_blank"
+            rel="noreferrer"
+            className="transition-colors hover:text-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40"
+          >
+            aokcommunications.ie
+          </a>
+        </div>
       </div>
     </footer>
   )
