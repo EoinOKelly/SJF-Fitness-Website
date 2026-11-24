@@ -56,21 +56,22 @@ export function Hero() {
 
       {/* Legibility washes */}
       <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/55 to-obsidian/45" />
-      <div className="absolute inset-0 bg-gradient-to-r from-obsidian/85 via-obsidian/25 to-transparent" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(14,12,12,.55),transparent_70%)]" />
 
-      <div className="container-page relative flex flex-1 flex-col justify-center py-16 sm:py-24 lg:py-28">
-        <div className="hero-enter max-w-3xl">
-          <h1 className="font-display text-[clamp(2.75rem,12vw,4.5rem)] font-bold leading-[1.02] tracking-tight text-ivory sm:text-6xl lg:text-7xl">
-            {siteConfig.owner}
+      <div className="container-page relative flex flex-1 items-center justify-center py-16">
+        <div className="hero-enter flex w-full flex-col items-center gap-6 sm:gap-8">
+          <h1 className="w-full max-w-[min(80vw,32rem)]">
+            <img src="/SJF_logo_dark.png" alt={siteConfig.name} width={642} height={160} className="h-auto w-full" />
           </h1>
-          <a
-            href={siteConfig.phoneHref}
-            className="mt-6 inline-flex min-h-11 items-center text-xl font-medium text-ivory transition-colors hover:text-brand-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand sm:text-2xl"
-          >
-            {siteConfig.phone}
-          </a>
-          <div className="mt-8">
-            <Button to="/contact" size="lg" className="w-full sm:w-auto">
+          <div className="flex items-center justify-center gap-5 sm:gap-7">
+            <div className="flex flex-col items-start text-sm text-ivory sm:flex-row sm:items-center sm:gap-4">
+              <span className="font-medium">{siteConfig.owner}</span>
+              <span aria-hidden="true" className="hidden h-4 w-px bg-white/40 sm:block" />
+              <a href={siteConfig.phoneHref} className="inline-flex min-h-11 items-center whitespace-nowrap tabular-nums hover:underline focus-visible:outline-brand">
+                {siteConfig.phone}
+              </a>
+            </div>
+            <Button to="/contact" size="sm" className="whitespace-nowrap">
               Contact Us
             </Button>
           </div>
