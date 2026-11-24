@@ -4,6 +4,7 @@ interface SectionHeadingProps {
   subtitle?: string
   align?: 'left' | 'center'
   id?: string
+  level?: 'h1' | 'h2'
 }
 
 export function SectionHeading({
@@ -12,6 +13,7 @@ export function SectionHeading({
   subtitle,
   align = 'left',
   id,
+  level: Heading = 'h2',
 }: SectionHeadingProps) {
   const isCenter = align === 'center'
 
@@ -28,9 +30,9 @@ export function SectionHeading({
           <span className="eyebrow">{eyebrow}</span>
         </div>
       )}
-      <h2 className="font-display text-3xl font-semibold leading-[1.06] tracking-tight text-ivory sm:text-5xl">
+      <Heading className="font-display text-3xl font-semibold leading-[1.06] tracking-tight text-ivory sm:text-5xl">
         {title}
-      </h2>
+      </Heading>
       {subtitle && (
         <p
           className={`mt-5 text-base leading-relaxed text-ash sm:mt-6 sm:text-lg ${isCenter ? 'mx-auto' : ''}`}

@@ -3,18 +3,16 @@ import { testimonials } from '../data/testimonials'
 import { PageMeta } from '../components/ui/PageMeta'
 import { SectionHeading } from '../components/ui/SectionHeading'
 import { Button } from '../components/ui/Button'
+import { pageSeo } from '../data/pageSeo'
 
 export function TestimonialsPage() {
   return (
-    <PageMeta
-      title="Testimonials"
-      path="/testimonials"
-      description="What clients say about training with Sandra Furney at SJF Fitness Portlaoise: personal one-to-one coaching, nutrition and real cooking knowledge."
-    >
+    <PageMeta {...pageSeo.testimonials}>
       <section className="py-20 lg:py-28">
         <div className="container-page">
           <SectionHeading
             eyebrow="Testimonials"
+            level="h1"
             title="In their own words"
             subtitle="Real results from real people who train privately with Sandra."
             align="center"

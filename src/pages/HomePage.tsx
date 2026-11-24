@@ -5,14 +5,11 @@ import { TestimonialsPreview } from '../components/home/TestimonialsPreview'
 import { Hero } from '../components/home/Hero'
 import { Services } from '../components/home/Services'
 import { Studio } from '../components/home/Studio'
-import { siteConfig } from '../data/siteConfig'
+import { pageSeo } from '../data/pageSeo'
 
 export function HomePage() {
   return (
-    <PageMeta
-      title={siteConfig.name}
-      description={`${siteConfig.owner}: female personal trainer, nutrition expert and trained chef in Portlaoise. Private training studio.`}
-    >
+    <PageMeta {...pageSeo.home}>
       <Hero />
       <About />
       <Studio />

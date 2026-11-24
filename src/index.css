@@ -88,7 +88,7 @@
 
 /* Quiet scroll / entrance reveals, only when motion is allowed */
 @media (prefers-reduced-motion: no-preference) {
-  .reveal {
+  .js .reveal {
     opacity: 0;
     transform: translateY(1.1rem);
     transition:
@@ -97,7 +97,7 @@
     transition-delay: var(--reveal-delay, 0ms);
   }
 
-  .reveal.is-in {
+  .js .reveal.is-in {
     opacity: 1;
     transform: none;
   }

@@ -3,18 +3,16 @@ import { ContactForm } from '../components/contact/ContactForm'
 import { PageMeta } from '../components/ui/PageMeta'
 import { SectionHeading } from '../components/ui/SectionHeading'
 import { siteConfig } from '../data/siteConfig'
+import { pageSeo } from '../data/pageSeo'
 
 export function ContactPage() {
   return (
-    <PageMeta
-      title="Contact"
-      path="/contact"
-      description="Contact Sandra Furney at SJF Fitness Portlaoise. Phone, email and studio location."
-    >
+    <PageMeta {...pageSeo.contact}>
       <section className="py-14 sm:py-20 lg:py-28">
         <div className="container-page">
           <SectionHeading
             eyebrow="Contact"
+            level="h1"
             title="Begin the conversation"
             subtitle="Ready to start? Send Sandra a note to arrange a session or ask a question. She answers personally."
             align="center"
