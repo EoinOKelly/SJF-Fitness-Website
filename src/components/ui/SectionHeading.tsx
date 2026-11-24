@@ -5,7 +5,6 @@ interface SectionHeadingProps {
   align?: 'left' | 'center'
   id?: string
   level?: 'h1' | 'h2'
-  compact?: boolean
 }
 
 export function SectionHeading({
@@ -15,13 +14,12 @@ export function SectionHeading({
   align = 'left',
   id,
   level: Heading = 'h2',
-  compact = false,
 }: SectionHeadingProps) {
   const isCenter = align === 'center'
 
   return (
     <div
-      className={`${compact ? 'mb-6 sm:mb-8' : 'mb-10 sm:mb-14'} max-w-2xl ${isCenter ? 'mx-auto text-center' : 'text-left'}`}
+      className={`mb-10 max-w-2xl sm:mb-14 ${isCenter ? 'mx-auto text-center' : 'text-left'}`}
       id={id}
     >
       {eyebrow && (

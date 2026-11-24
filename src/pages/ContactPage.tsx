@@ -8,12 +8,11 @@ import { pageSeo } from '../data/pageSeo'
 export function ContactPage() {
   return (
     <PageMeta {...pageSeo.contact}>
-      <section className="pb-14 pt-8 sm:pb-20 sm:pt-12 lg:pb-28 lg:pt-16">
+      <section className="py-14 sm:py-20 lg:py-28">
         <div className="container-page">
           <SectionHeading
             eyebrow="Contact"
             level="h1"
-            compact
             title="Begin the conversation"
             subtitle="Ready to start? Send Sandra a note to arrange a session or ask a question. She answers personally."
             align="center"
