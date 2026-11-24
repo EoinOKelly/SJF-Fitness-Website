@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Phone } from 'lucide-react'
 import { siteConfig } from '../../data/siteConfig'
 import { Button } from '../ui/Button'
 
@@ -25,6 +25,19 @@ export function Hero() {
   }, [])
 
   return (
+    <>
+    <aside aria-label="Contact Sandra" className="border-b border-white/10 bg-onyx">
+      <div className="container-page flex flex-wrap items-center justify-between gap-x-6 gap-y-3 py-3 sm:py-4">
+        <div className="flex flex-wrap items-center gap-x-5 gap-y-1">
+          <span className="text-xs font-semibold uppercase tracking-[0.18em] text-ivory">Contact Sandra</span>
+          <a href={siteConfig.phoneHref} className="inline-flex min-h-11 items-center gap-2 text-sm font-medium text-brand-light transition-colors hover:text-ivory focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand">
+            <Phone className="h-4 w-4" aria-hidden="true" />
+            {siteConfig.phone}
+          </a>
+        </div>
+        <Button to="/contact" size="sm" className="w-full sm:w-auto">Contact</Button>
+      </div>
+    </aside>
     <section className="relative flex min-h-[calc(100svh-5rem)] w-full flex-col overflow-hidden bg-obsidian">
       {/* Warm fallback tone shown before/behind the video */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_72%_18%,rgba(201,47,18,0.10),transparent_55%)]" />
@@ -103,5 +116,6 @@ export function Hero() {
         </div>
       </div>
     </section>
+    </>
   )
 }
